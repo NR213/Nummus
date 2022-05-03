@@ -71,16 +71,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 else
                     Toast.makeText(MainActivity.this, "New Entry Not Updated", Toast.LENGTH_SHORT).show();
             }        });
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String dotTXT = doT.getText().toString();
-                Boolean checkudeletedata = DB.deletedata(dotTXT);
-                if(checkudeletedata==true)
-                    Toast.makeText(MainActivity.this, "Entry Deleted", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this, "Entry Not Deleted", Toast.LENGTH_SHORT).show();
-            }        });
+
 
 
     }

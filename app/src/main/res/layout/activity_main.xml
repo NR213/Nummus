@@ -11,6 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please enter the details below"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+
         android:textSize="24dp"
         android:layout_marginTop="20dp"/>
     <EditText
@@ -18,8 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Date of Transaction"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:textSize="24dp"
         android:layout_below="@+id/texttitle"
+        android:layout_marginTop="20dp"
         android:inputType="number"/>
 
     <EditText
@@ -29,6 +35,9 @@
         android:hint="amount"
         android:textSize="24dp"
         android:layout_below="@+id/doT"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
         android:inputType="number"/>
     <EditText
         android:id="@+id/reference"
@@ -37,6 +46,9 @@
         android:hint="reference"
         android:textSize="24dp"
         android:layout_below="@+id/amount"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
         android:inputType="textPersonName"/>
 
     <Spinner
@@ -47,38 +59,49 @@
         android:hint="paymentMethod"
         android:inputType="textPersonName"
         android:spinnerMode="dropdown"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
         android:textSize="96sp" />
 
     <EditText
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="note"
-        android:textSize="24dp"
         android:layout_below="@+id/paymentMethod"
-        android:inputType="textPersonName"/>
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:hint="note"
+        android:inputType="textPersonName"
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/btnInsert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Add New Transaction"
+        android:layout_below="@id/note"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/note"/>
+        android:background="@drawable/custom_button"
+        android:text="Add Transaction"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="24dp"
+        app:backgroundTint="#3F51B5" />
+
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:layout_below="@id/btnInsert"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/custom_button"
         android:text="Update Transaction"
-        android:layout_below="@id/btnInsert"/>
-    <Button
-        android:id="@+id/addTransaction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:text="Delete Transaction"
-        android:layout_below="@id/btnUpdate"/>
+        app:backgroundTint="#3F51B5" />
+
 
 </RelativeLayout>

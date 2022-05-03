@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nummus">
         <activity
+            android:name=".DeleteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewActivity"
             android:exported="false" />
         <activity
