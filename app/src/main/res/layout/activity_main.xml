@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/texttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please enter the details below"
+        android:textSize="24dp"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/doT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date of Transaction"
+        android:textSize="24dp"
+        android:layout_below="@+id/texttitle"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="amount"
+        android:textSize="24dp"
+        android:layout_below="@+id/doT"
+        android:inputType="number"/>
+    <EditText
+        android:id="@+id/reference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="reference"
+        android:textSize="24dp"
+        android:layout_below="@+id/amount"
+        android:inputType="textPersonName"/>
+
+    <Spinner
+        android:id="@+id/paymentMethod"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/reference"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:spinnerMode="dropdown"
+        android:textSize="96sp" />
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="note"
+        android:textSize="24dp"
+        android:layout_below="@+id/paymentMethod"
+        android:inputType="textPersonName"/>
+
+    <Button
+        android:id="@+id/btnInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Add New Transaction"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/note"/>
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Update Transaction"
+        android:layout_below="@id/btnInsert"/>
+    <Button
+        android:id="@+id/addTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Delete Transaction"
+        android:layout_below="@id/btnUpdate"/>
+
+</RelativeLayout>

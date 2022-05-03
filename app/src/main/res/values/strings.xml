@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Nummus</string>
+
+    <string-array name="paymentMethodlist">
+        <item>Cash</item>
+        <item>Card</item>
+        <item>Other</item>
+    </string-array>
+</resources>
