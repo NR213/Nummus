@@ -20,7 +20,7 @@ public class ViewActivity extends AppCompatActivity {
         Button view;
         DBHelper DB = new DBHelper(this);
         view = findViewById(R.id.btnView1);
-        doT = findViewById(R.id.doT1);
+        doT = findViewById(R.id.txtview);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

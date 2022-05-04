@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DeleteActivity">
+
     <TextView
         android:id="@+id/texttitle"
         android:layout_width="match_parent"
@@ -16,24 +17,13 @@
         android:text="Please enter the details below"
         android:textSize="24dp" />
 
-    <EditText
-        android:id="@+id/doTdel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/texttitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="102dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:hint="Date of Transaction"
-        android:inputType="number"
-        android:textSize="24dp" />
+
 
     <Button
         android:id="@+id/btndel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/doTdel"
+        android:layout_below="@+id/textinput"
         android:layout_marginStart="24dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
@@ -43,7 +33,31 @@
         android:textSize="20dp"
         app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doTdel"
+        app:layout_constraintTop_toBottomOf="@+id/textinput"
         app:layout_constraintVertical_bias="0.111"
         tools:layout_editor_absoluteX="0dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Date of Transaction"
+        app:helperText="Required*"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtdel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 </RelativeLayout>

@@ -18,7 +18,7 @@ public class DeleteActivity extends AppCompatActivity {
         Button delete;
         DBHelper DB = new DBHelper(this);
         delete = findViewById(R.id.btndel);
-        doT = findViewById(R.id.doTdel);
+        doT = findViewById(R.id.txtdel);
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
