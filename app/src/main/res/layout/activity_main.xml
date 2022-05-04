@@ -4,21 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:padding="10dp"
+
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/texttitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Please enter the details below"
+        android:drawableStart="@drawable/ic_baseline_description_24"
+        android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:drawablePadding="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/pirate_of_the_seaside_bubbles"
-
-        android:text="Please enter the details below"
-        android:textSize="30dp" />
+        android:textSize="28dp" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -31,14 +36,19 @@
         android:hint="Date of Transaction"
         app:helperText="Required*"
         app:counterEnabled="true"
+
         app:counterMaxLength="10"
         app:helperTextTextColor="#E91E63">
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/doT"
+            android:id="@+id/doTmain"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:drawablePadding="5dp"
 
             />
 
@@ -65,6 +75,9 @@
             android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_monetization_on_24"
+            android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
+            android:drawablePadding="5dp"
 
             />
 
@@ -91,6 +104,9 @@
             android:id="@+id/reference"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_book_24"
+            android:drawableLeft="@drawable/ic_baseline_book_24"
+            android:drawablePadding="5dp"
 
             />
 
@@ -102,11 +118,13 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginTop="320dp"
+        android:layout_marginEnd="32dp"
+
         android:hint="paymentMethod"
         android:inputType="textPersonName"
         android:spinnerMode="dropdown"
+
         android:textSize="96sp" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -118,7 +136,7 @@
         android:layout_marginTop="375dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:hint="reference"
+        android:hint="note"
         app:helperText="Required*"
         app:counterEnabled="true"
         app:counterMaxLength="20"
@@ -129,6 +147,9 @@
             android:id="@+id/note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_book_24"
+            android:drawableLeft="@drawable/ic_baseline_book_24"
+            android:drawablePadding="5dp"
 
             />
 
@@ -143,6 +164,7 @@
         android:layout_marginTop="465dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
+
         android:text="Add Transaction"
         android:textSize="20dp"
         android:fontFamily="@font/paradiso"

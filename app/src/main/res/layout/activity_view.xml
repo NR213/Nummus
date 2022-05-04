@@ -15,10 +15,13 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:text="Please enter the details below"
+        android:drawableStart="@drawable/ic_baseline_description_24"
+        android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:drawablePadding="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/pirate_of_the_seaside_bubbles"
 
-        android:textSize="30dp" />
+        android:textSize="28dp" />
 
 
     <Button
@@ -60,6 +63,9 @@
             android:id="@+id/txtview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:drawablePadding="5dp"
 
             />
     </com.google.android.material.textfield.TextInputLayout>

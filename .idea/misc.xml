@@ -5,8 +5,9 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/custom_button.xml" value="0.2555" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/custom_image.xml" value="0.2555" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/textview_border.xml" value="0.1715" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_delete.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_front_page.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_front_page.xml" value="0.16" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_view.xml" value="0.264" />
       </map>

@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import org.w3c.dom.Text;
+
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
         super(context, "Userdata.db", null, 1);
