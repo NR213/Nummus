@@ -6,88 +6,146 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/texttitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
+
         android:text="Please enter the details below"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-
-        android:textSize="24dp"
-        android:layout_marginTop="20dp"/>
-    <EditText
-        android:id="@+id/doT"
+        android:textSize="30dp" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:hint="Date of Transaction"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textSize="24dp"
-        android:layout_below="@+id/texttitle"
-        android:layout_marginTop="20dp"
-        android:inputType="number"/>
+        app:helperText="Required*"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:helperTextTextColor="#E91E63">
 
-    <EditText
-        android:id="@+id/amount"
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/doT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputamount"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:hint="amount"
-        android:textSize="24dp"
-        android:layout_below="@+id/doT"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="20dp"
-        android:inputType="number"/>
-    <EditText
-        android:id="@+id/reference"
+        app:helperText="Required*"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputreference"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:hint="reference"
-        android:textSize="24dp"
-        android:layout_below="@+id/amount"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="20dp"
-        android:inputType="textPersonName"/>
+        app:helperText="Required*"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Spinner
         android:id="@+id/paymentMethod"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_below="@+id/reference"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="320dp"
         android:hint="paymentMethod"
         android:inputType="textPersonName"
         android:spinnerMode="dropdown"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="20dp"
         android:textSize="96sp" />
 
-    <EditText
-        android:id="@+id/note"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputnote"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/paymentMethod"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:hint="note"
-        android:inputType="textPersonName"
-        android:textSize="24dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="375dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="reference"
+        app:helperText="Required*"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnInsert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/note"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="465dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
         android:text="Add Transaction"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textSize="24dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/paradiso"
         app:backgroundTint="#3F51B5" />
 
     <Button
@@ -96,11 +154,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnInsert"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
         android:text="Update Transaction"
-        android:textSize="24dp"
+        android:fontFamily="@font/paradiso"
+        android:textSize="20dp"
         app:backgroundTint="#3F51B5" />
 
 

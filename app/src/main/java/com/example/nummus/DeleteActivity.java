@@ -26,9 +26,9 @@ public class DeleteActivity extends AppCompatActivity {
                 String dotTXT = doT.getText().toString();
                 Boolean checkudeletedata = DB.deletedata(dotTXT);
                 if(checkudeletedata==true)
-                    Toast.makeText(DeleteActivity.this, "Entry Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteActivity.this, "Transaction Deleted", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(DeleteActivity.this, "Entry Doesn't Exist", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteActivity.this, "Transaction Doesn't Exist", Toast.LENGTH_SHORT).show();
             }        });
     }
 }

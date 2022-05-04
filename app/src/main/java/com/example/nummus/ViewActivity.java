@@ -27,7 +27,7 @@ public class ViewActivity extends AppCompatActivity {
                 String doTTxt = doT.getText().toString();
                 Cursor res = DB.getdata(doTTxt);
                 if(res.getCount()==0){
-                    Toast.makeText(ViewActivity.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewActivity.this, "No Transaction Exists", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 StringBuffer buffer = new StringBuffer();

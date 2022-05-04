@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 Boolean checkinsertdata = DB.insertuserdata(dotTXT, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
                 if(checkinsertdata==true)
-                    Toast.makeText(MainActivity.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "New Transaction Inserted", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(MainActivity.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "New Transaction Not Inserted", Toast.LENGTH_SHORT).show();
             }        });
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 Boolean checkupdatedata = DB.updateuserdata(dotTXT, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
                 if(checkupdatedata==true)
-                    Toast.makeText(MainActivity.this, "Entry Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Transaction Updated", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(MainActivity.this, "New Entry Not Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "New Transaction Not Updated", Toast.LENGTH_SHORT).show();
             }        });
 
 
