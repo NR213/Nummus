@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nummus">
         <activity
+            android:name=".registrationactivity"
+            android:exported="false" />
+        <activity
+            android:name=".Front_Page"
+            android:exported="false" />
+        <activity
             android:name=".DeleteActivity"
             android:exported="false" />
         <activity
@@ -19,7 +25,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Front_Page"
+            android:name=".loginactivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

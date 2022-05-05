@@ -17,13 +17,16 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
-        android:text="Please enter the details below"
         android:drawableStart="@drawable/ic_baseline_description_24"
         android:drawableLeft="@drawable/ic_baseline_description_24"
         android:drawablePadding="5dp"
-        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:drawableTint="@color/black"
         android:fontFamily="@font/pirate_of_the_seaside_bubbles"
+        android:text="Please enter the details below"
+        android:textAlignment="center"
         android:textSize="28dp" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -31,13 +34,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="200dp"
         android:layout_marginBottom="32dp"
         android:hint="Date of Transaction"
-        app:helperText="Required*"
         app:counterEnabled="true"
-
         app:counterMaxLength="10"
+
+        app:helperText="Required*"
         app:helperTextTextColor="#E91E63">
 
 
@@ -48,6 +51,36 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_calendar_today_24"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:drawableTint="@color/black"
+            android:drawablePadding="5dp"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputtime"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Time"
+        app:helperText="Required*"
+        app:counterEnabled="true"
+
+        app:counterMaxLength="10"
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/timemain"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:drawableLeft="@drawable/ic_baseline_access_time_24"
+            android:drawableTint="@color/black"
             android:drawablePadding="5dp"
 
             />
@@ -77,9 +110,12 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_monetization_on_24"
             android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
+            android:drawableTint="@color/black"
             android:drawablePadding="5dp"
 
             />
+
+
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -106,6 +142,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_book_24"
             android:drawableLeft="@drawable/ic_baseline_book_24"
+            android:drawableTint="@color/black"
             android:drawablePadding="5dp"
 
             />
@@ -149,6 +186,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_book_24"
             android:drawableLeft="@drawable/ic_baseline_book_24"
+            android:drawableTint="@color/black"
             android:drawablePadding="5dp"
 
             />

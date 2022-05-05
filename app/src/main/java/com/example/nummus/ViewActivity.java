@@ -70,10 +70,11 @@ public class ViewActivity extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 while(res.moveToNext()){
                     buffer.append("doT : "+res.getString(0)+"\n");
-                    buffer.append("amount : "+res.getString(1)+"\n");
-                    buffer.append("reference : "+res.getString(2)+"\n");
-                    buffer.append("paymentMethod : "+res.getString(3)+"\n");
-                    buffer.append("note : "+res.getString(4)+"\n");
+                    buffer.append("Time : "+res.getString(1)+"\n");
+                    buffer.append("amount : "+res.getString(2)+"\n");
+                    buffer.append("reference : "+res.getString(3)+"\n");
+                    buffer.append("paymentMethod : "+res.getString(4)+"\n");
+                    buffer.append("note : "+res.getString(5)+"\n");
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(ViewActivity.this);

@@ -18,6 +18,8 @@
         android:text="Please enter the details below"
         android:drawableStart="@drawable/ic_baseline_description_24"
         android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:drawableTint="@color/black"
+        android:textColor="@color/black"
         android:drawablePadding="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/pirate_of_the_seaside_bubbles"
@@ -65,6 +67,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_calendar_today_24"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:drawableTint="@color/black"
             android:drawablePadding="5dp"
 
             />

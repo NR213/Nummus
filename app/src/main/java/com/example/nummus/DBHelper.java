@@ -11,21 +11,24 @@ import org.w3c.dom.Text;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
-        super(context, "Userdata.db", null, 1);
+        super(context, "Userdata2.db", null, 1);
     }
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table Userdetails(doT TEXT primary key, amount TEXT, reference TEXT, paymentMethod TEXT, note TEXT)");
+        DB.execSQL("create Table Userdetails(doT TEXT primary key, time TEXT, amount TEXT, reference TEXT, paymentMethod TEXT, note TEXT)");
+        DB.execSQL("create Table users(username TEXT primary key, password TEXT)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int ii) {
         DB.execSQL("drop Table if exists Userdetails");
+        DB.execSQL("drop Table if exists users");
     }
-    public Boolean insertuserdata(String doT, String amount, String reference, String paymentMethod, String note)
+    public Boolean insertuserdata(String doT, String time, String amount, String reference, String paymentMethod, String note)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("doT", doT);
+        contentValues.put("time", time);
         contentValues.put("amount", amount);
         contentValues.put("reference", reference);
         contentValues.put("paymentMethod", paymentMethod);
@@ -37,10 +40,11 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    public Boolean updateuserdata(String doT, String amount, String reference, String paymentMethod, String note)
+    public Boolean updateuserdata(String doT, String time, String amount, String reference, String paymentMethod, String note)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("time", time);
         contentValues.put("amount", amount);
         contentValues.put("reference", reference);
         contentValues.put("paymentMethod", paymentMethod);
@@ -78,5 +82,34 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from Userdetails where doT = ?", new String[]{doT});
         return cursor;
+    }
+
+    public Boolean insertData(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("password", password);
+        long result = MyDB.insert("users", null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Boolean checkusername(String username) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[]{username});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    public Boolean checkusernamepassword(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {username,password});
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
     }
 }
