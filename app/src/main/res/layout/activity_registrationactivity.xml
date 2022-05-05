@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registrationactivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputreguser"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Email"
+
+
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtreguser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawableTint="@color/black"
+            android:drawablePadding="5dp"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputregpass1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="password"
+
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtregpass1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawableTint="@color/black"
+            android:drawablePadding="5dp"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputregpass2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Conform password"
+
+        app:helperTextTextColor="#E91E63">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtregpass2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawableTint="@color/black"
+            android:drawablePadding="5dp"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/paradiso"
+
+        android:text="Sign up"
+
+
+        android:textSize="20dp"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintVertical_bias="0.111"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Registration"
+        android:textColor="@color/black"
+        android:drawablePadding="5dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
+        android:textSize="40dp" />
+
+
+</RelativeLayout>
