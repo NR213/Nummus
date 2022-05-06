@@ -121,5 +121,18 @@
         android:fontFamily="@font/pirate_of_the_seaside_bubbles"
         android:textSize="40dp" />
 
+    <TextView
+        android:id="@+id/textpassinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Password length should be 6 or more*"
+        android:textColor="@color/black"
+        android:drawablePadding="5dp"
+        android:textSize="15dp" />
+
 
 </RelativeLayout>

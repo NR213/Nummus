@@ -32,10 +32,11 @@ public class registrationactivity extends AppCompatActivity {
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
 
-                if(user.equals("")||pass.equals("")||repass.equals(""))
+                if(user.isEmpty()||pass.isEmpty()||repass.isEmpty())
                     Toast.makeText(registrationactivity.this, "Please enter Username and Password", Toast.LENGTH_SHORT).show();
                 else{
                     if(pass.equals(repass)){
+                        if (pass.length() > 5){
                         Boolean checkuser = DB.checkusername(user);
                         if(checkuser==false){
                             if(Patterns.EMAIL_ADDRESS.matcher(user).matches()) {
@@ -54,6 +55,9 @@ public class registrationactivity extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(registrationactivity.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
+                        }
+                        }else{
+                            Toast.makeText(registrationactivity.this, "Password should be longer than 6 characters", Toast.LENGTH_SHORT).show();
                         }
                     }else{
                         Toast.makeText(registrationactivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
