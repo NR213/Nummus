@@ -200,9 +200,9 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
 
+        android:fontFamily="@font/paradiso"
         android:text="Add Transaction"
         android:textSize="20dp"
-        android:fontFamily="@font/paradiso"
         app:backgroundTint="#3F51B5" />
 
     <Button

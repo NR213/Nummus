@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         amount = findViewById(R.id.amount);
         reference = findViewById(R.id.reference);
 
@@ -52,8 +52,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         note = findViewById(R.id.note);
         insert = findViewById(R.id.btnInsert);
         update = findViewById(R.id.btnUpdate);
-        delete = findViewById(R.id.addTransaction);
-        view = findViewById(R.id.btnView);
+
         DB = new DBHelper(this);
 
         timeButton = (EditText) findViewById(R.id.timemain);

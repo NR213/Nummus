@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Nummus</string>
-
+    <string name="navigation_draweropen">Open navigation drawer</string>
+    <string name="navigation_drawerclose">Close navigation drawer</string>
     <string-array name="paymentMethodlist">
         <item>Cash</item>
         <item>Card</item>
