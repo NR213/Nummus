@@ -10,12 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nummus">
         <activity
+            android:name=".Navigationactivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigationactivity"
+            android:theme="@style/Theme.Nummus.NoActionBar" />
+        <activity
             android:name=".registrationactivity"
             android:exported="false" />
         <activity
             android:name=".Front_Page"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DeleteActivity"
             android:exported="false" />

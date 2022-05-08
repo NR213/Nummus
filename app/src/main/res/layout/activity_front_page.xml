@@ -1,137 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawer"
-    android:fitsSystemWindows="true"
-    tools:context=".Front_Page"
-    tools:openDrawer="start">
-
-
-    <LinearLayout
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/addTransaction"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="@color/design_default_color_primary"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+        android:layout_height="60dp"
 
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_button"
+        android:text="Add Transaction"
+        android:textSize="24dp"
+        android:fontFamily="@font/paradiso"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
-        <FrameLayout
-            android:id="@+id/fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
-    <com.google.android.material.navigation.NavigationView
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/addTransaction"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_button"
+        android:text="View Transaction"
+        android:fontFamily="@font/paradiso"
+        android:textSize="24dp"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTransaction"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <Button
+        android:id="@+id/btndelete1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/btnView"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/custom_button"
+        android:text="Delete Transaction"
+        android:fontFamily="@font/paradiso"
+        android:textSize="24dp"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="@id/btnView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnView"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="135dp"
+        android:src="@drawable/nummus_blue1"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:strokeColor="#2A4C3A"
+         />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/navigation"
-        app:menu="@menu/drawermenu"/>
-
-
-
-<!--<RelativeLayout-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent">-->
-<!--    <Button-->
-<!--        android:id="@+id/addTransaction"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="300dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:background="@drawable/custom_button"-->
-<!--        android:text="Add Transaction"-->
-<!--        android:textSize="24dp"-->
-<!--        android:fontFamily="@font/paradiso"-->
-<!--        app:backgroundTint="#3F51B5"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.395"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.499" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_below="@+id/addTransaction"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:background="@drawable/custom_button"-->
-<!--        android:text="View Transaction"-->
-<!--        android:fontFamily="@font/paradiso"-->
-<!--        android:textSize="24dp"-->
-<!--        app:backgroundTint="#3F51B5"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/addTransaction"-->
-<!--        app:layout_constraintVertical_bias="0.081" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btndelete1"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_below="@+id/btnView"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:background="@drawable/custom_button"-->
-<!--        android:text="Delete Transaction"-->
-<!--        android:fontFamily="@font/paradiso"-->
-<!--        android:textSize="24dp"-->
-<!--        app:backgroundTint="#3F51B5"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/btnView"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnView"-->
-<!--        app:layout_constraintVertical_bias="0.081" />-->
-
-<!--    <com.google.android.material.imageview.ShapeableImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="150dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginStart="126dp"-->
-<!--        android:layout_marginTop="130dp"-->
-<!--        android:layout_marginEnd="135dp"-->
-<!--        android:src="@drawable/nummus_blue1"-->
-<!--        app:shapeAppearanceOverlay="@style/circle"-->
-<!--        app:strokeColor="#2A4C3A"-->
-<!--         />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:fontFamily="@font/spidertoondemoregular"-->
-<!--        android:text="Money Control - Nummus"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="40dp" />-->
-<!--</RelativeLayout>-->
-</androidx.drawerlayout.widget.DrawerLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/spidertoondemoregular"
+        android:text="Money Control - Nummus"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+</RelativeLayout>

@@ -3,18 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable-v21/ic_menu_camera.xml" value="0.1575" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable-v21/ic_menu_gallery.xml" value="0.1575" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" value="0.1575" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/custom_button.xml" value="0.2555" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/custom_image.xml" value="0.2555" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/side_nav_bar.xml" value="0.1575" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/textview_border.xml" value="0.1715" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_delete.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_front_page.xml" value="0.16" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_frontactivity.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_loginactivity.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_nav2.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_navigationactivity.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_registrationactivity.xml" value="0.1936725096194955" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_view.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/app_bar_nav2.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/app_bar_navigationactivity.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/content_nav2.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/content_navigationactivity.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_add.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_add2.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_gallery.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_home.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_slideshow.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/frontpage.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/nav_header_nav2.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/nav_header_navigationactivity.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/navigation.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/menu/activity_main_drawer.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/menu/drawermenu.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/menu/nav2.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/menu/navigationactivity.xml" value="0.20521590423257802" />
       </map>
     </option>
   </component>
