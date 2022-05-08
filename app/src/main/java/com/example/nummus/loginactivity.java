@@ -1,8 +1,11 @@
 package com.example.nummus;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +24,11 @@ public class loginactivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.txtpass);
         btnlogin = (Button) findViewById(R.id.btnsignin);
         btnregister = (Button) findViewById(R.id.btnregister);
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#E19F9F"));
+        actionBar.setBackgroundDrawable(colorDrawable);
         DB = new DBHelper(this);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {

@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+
     tools:context=".loginactivity">
 
 
@@ -17,6 +20,11 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="Email"
+        app:hintEnabled="true"
+        android:textColorHint="@color/black"
+
+
+
 
 
         app:helperTextTextColor="#E91E63">
@@ -26,10 +34,13 @@
             android:id="@+id/txtuser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawableLeft="@drawable/ic_baseline_email_24"
-            android:drawableTint="@color/black"
+
             android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,7 +55,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="password"
-
+        android:textColorHint="@color/black"
         app:helperTextTextColor="#E91E63">
 
 
@@ -55,7 +66,9 @@
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawableTint="@color/black"
+            android:background="@drawable/custom_button"
             android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -66,14 +79,15 @@
         android:layout_height="wrap_content"
 
         android:layout_marginStart="32dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="210dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/paradiso"
+        android:layout_marginBottom="32dp"
+
+        android:fontFamily="@font/ageopersonalusebold"
         android:text="Sign In"
         android:textSize="20dp"
-        app:backgroundTint="#3F51B5"
+        android:textStyle="bold"
+        app:backgroundTint="#E19F9F"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintVertical_bias="0.111"
@@ -85,34 +99,18 @@
         android:layout_height="wrap_content"
 
         android:layout_marginStart="210dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/paradiso"
+
+        android:fontFamily="@font/ageopersonalusebold"
         android:text="Register"
         android:textSize="20dp"
-        app:backgroundTint="#3F51B5"
+        app:backgroundTint="#E19F9F"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintVertical_bias="0.111"
         tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/textapp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
-        android:text="Nummus - Money Control"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="40dp" />
 
 
     <TextView
@@ -120,15 +118,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:text="LOGIN"
-        android:textColor="@color/black"
         android:drawablePadding="5dp"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="SIGN IN"
         android:textAlignment="center"
-        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
-        android:textSize="28dp" />
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
 
