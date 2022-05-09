@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nummus">
         <activity
+            android:name=".loginactivity"
+            android:exported="false" />
+        <activity
             android:name=".Navigationactivity"
             android:exported="false"
             android:label="@string/title_activity_navigationactivity"
@@ -31,7 +34,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".loginactivity"
+            android:name=".startactivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
