@@ -13,14 +13,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class loginactivity extends AppCompatActivity {
-    EditText username, password;
+    EditText email, password, username;
     Button btnlogin, btnregister;
     DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginactivity);
-        username = (EditText) findViewById(R.id.txtuser);
+        username = (EditText) findViewById(R.id.txtusername);
+        email = (EditText) findViewById(R.id.txtuser);
         password = (EditText) findViewById(R.id.txtpass);
         btnlogin = (Button) findViewById(R.id.btnsignin);
         btnregister = (Button) findViewById(R.id.btnregister);
@@ -35,7 +36,7 @@ public class loginactivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String user = username.getText().toString();
+                String user = email.getText().toString();
                 String pass = password.getText().toString();
 
                 if(user.isEmpty()||pass.isEmpty())

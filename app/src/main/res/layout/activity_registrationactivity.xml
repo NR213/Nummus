@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".registrationactivity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -16,20 +17,25 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="Email"
-
-
-        app:helperTextTextColor="#E91E63">
+        app:hintEnabled="true"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtreguser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawableLeft="@drawable/ic_baseline_email_24"
-            android:drawableTint="@color/black"
-            android:drawablePadding="5dp"
 
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,19 +48,26 @@
         android:layout_marginTop="270dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:hint="password"
-
-        app:helperTextTextColor="#E91E63">
+        android:hint="Password"
+        app:hintEnabled="true"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtregpass1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawableTint="@color/black"
+
             android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -68,19 +81,26 @@
         android:layout_marginTop="340dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:hint="Conform password"
-
-        app:helperTextTextColor="#E91E63">
+        android:hint="Confirm Password"
+        app:hintEnabled="true"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtregpass2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawableTint="@color/black"
+
             android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,20 +109,19 @@
     <Button
         android:id="@+id/btnsignup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="380dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/paradiso"
+
+        android:fontFamily="@font/ageopersonalusebold"
 
         android:text="Sign up"
 
-
         android:textSize="20dp"
-        app:backgroundTint="#3F51B5"
+        app:backgroundTint="#E19F9F"
         app:layout_constraintVertical_bias="0.111"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -114,24 +133,25 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:text="Registration"
-        android:textColor="@color/black"
         android:drawablePadding="5dp"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Registration"
         android:textAlignment="center"
-        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
+        android:textColor="@color/black"
         android:textSize="40dp" />
 
     <TextView
         android:id="@+id/textpassinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="42dp"
         android:layout_marginTop="450dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="42dp"
         android:layout_marginBottom="32dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="sans-serif-black"
         android:text="Password length should be 6 or more*"
         android:textColor="@color/black"
-        android:drawablePadding="5dp"
         android:textSize="15dp" />
 
 

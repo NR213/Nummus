@@ -1,8 +1,11 @@
 package com.example.nummus;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -18,6 +21,11 @@ public class registrationactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrationactivity);
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#E19F9F"));
+        actionBar.setBackgroundDrawable(colorDrawable);
         username = (EditText) findViewById(R.id.txtreguser);
         password = (EditText) findViewById(R.id.txtregpass1);
         repassword = (EditText) findViewById(R.id.txtregpass2);
