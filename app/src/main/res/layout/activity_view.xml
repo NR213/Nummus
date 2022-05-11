@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ViewActivity">
 
     <TextView
@@ -14,16 +15,16 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:textColor="@color/black"
-        android:text="Please enter the details below"
         android:drawableStart="@drawable/ic_baseline_description_24"
         android:drawableLeft="@drawable/ic_baseline_description_24"
-        android:drawableTint="@color/black"
         android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Please enter the details below"
         android:textAlignment="center"
-        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
+        android:textColor="@color/black"
 
-        android:textSize="28dp" />
+        android:textSize="24dp" />
 
 
     <Button
@@ -31,15 +32,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textinputview"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/paradiso"
-        android:text="View Transaction details"
+
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="View details"
         android:textSize="20dp"
-        app:backgroundTint="#3F51B5"
+        app:backgroundTint="#E19F9F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textinputview"
         app:layout_constraintVertical_bias="0.111"
@@ -51,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="Date of Transaction"

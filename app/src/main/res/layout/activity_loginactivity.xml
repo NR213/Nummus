@@ -81,43 +81,6 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputusername"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:hint="username"
-        android:gravity="center_horizontal"
-        app:endIconTint="@color/black"
-        app:hintTextColor="@color/black"
-        app:startIconTint="@color/black"
-
-        android:textColorHint="@color/black"
-        app:helperTextTextColor="#E91E63">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtusername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:drawableStart="@drawable/ic_baseline_person_24"
-            android:drawableLeft="@drawable/ic_baseline_person_24"
-            android:drawableTint="@color/black"
-            android:background="@drawable/custom_button"
-            android:drawablePadding="5dp"
-
-
-            android:layout_gravity="center_horizontal"
-            android:textColorHint="@color/black"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnsignin"
@@ -164,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="190dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:drawablePadding="5dp"

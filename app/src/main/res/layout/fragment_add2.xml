@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/background"
     android:padding="10dp"
 
     tools:context=".ui.AddNav.AddFragment">
@@ -20,12 +20,12 @@
         android:drawableStart="@drawable/ic_baseline_description_24"
         android:drawableLeft="@drawable/ic_baseline_description_24"
         android:drawablePadding="5dp"
-        android:textColor="@color/black"
         android:drawableTint="@color/black"
-        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
+        android:fontFamily="@font/ageopersonalusebold"
         android:text="Please enter the details below"
         android:textAlignment="center"
-        android:textSize="28dp" />
+        android:textColor="@color/black"
+        android:textSize="24dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput"
@@ -36,22 +36,27 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="200dp"
         android:layout_marginBottom="32dp"
-        android:hint="Date of Transaction"
-
-
+        android:hint="Date"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black"
         app:helperText="Required*"
-        app:helperTextTextColor="#E91E63">
+
+        app:helperTextTextColor="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/doTmain"
             android:layout_width="match_parent"
-
+            android:background="@drawable/custom_button"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_calendar_today_24"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
             android:drawableTint="@color/black"
             android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -65,20 +70,26 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="Time"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black"
         app:helperText="Required*"
 
-        app:helperTextTextColor="#E91E63">
+        app:helperTextTextColor="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/timemain"
             android:layout_width="match_parent"
-
+            android:background="@drawable/custom_button"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_access_time_24"
             android:drawableLeft="@drawable/ic_baseline_access_time_24"
             android:drawableTint="@color/black"
             android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
 
             />
 
@@ -95,20 +106,26 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="amount"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black"
         app:helperText="Required*"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:helperTextTextColor="#E91E63">
+
+        app:helperTextTextColor="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_monetization_on_24"
             android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
             android:drawableTint="@color/black"
             android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
 
             />
 
@@ -127,10 +144,14 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="reference"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black"
         app:helperText="Required*"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:helperTextTextColor="#E91E63">
+
+        app:helperTextTextColor="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -140,7 +161,9 @@
             android:drawableStart="@drawable/ic_baseline_book_24"
             android:drawableLeft="@drawable/ic_baseline_book_24"
             android:drawableTint="@color/black"
+            android:background="@drawable/custom_button"
             android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
 
             />
 
@@ -171,10 +194,13 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="note"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black"
         app:helperText="Required*"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:helperTextTextColor="#E91E63">
+        app:helperTextTextColor="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -184,7 +210,9 @@
             android:drawableStart="@drawable/ic_baseline_book_24"
             android:drawableLeft="@drawable/ic_baseline_book_24"
             android:drawableTint="@color/black"
+            android:background="@drawable/custom_button"
             android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
 
             />
 
@@ -194,30 +222,30 @@
     <Button
         android:id="@+id/btnInsert"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="465dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/custom_button"
+        android:layout_marginEnd="210dp"
 
-        android:fontFamily="@font/paradiso"
-        android:text="Add Transaction"
+
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Add "
         android:textSize="20dp"
-        app:backgroundTint="#3F51B5" />
+        android:textStyle="bold"
+        app:backgroundTint="#E19F9F" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnInsert"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="32dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="210dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/custom_button"
-        android:text="Update Transaction"
-        android:fontFamily="@font/paradiso"
+        android:layout_marginTop="465dp"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Update "
         android:textSize="20dp"
-        app:backgroundTint="#3F51B5" />
+        android:textStyle="bold"
+        app:backgroundTint="#E19F9F" />
 
 
 </RelativeLayout>

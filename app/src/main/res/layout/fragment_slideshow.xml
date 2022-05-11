@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:openDrawer="start"
     tools:context=".DeleteActivity">
 
@@ -15,15 +16,15 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:text="Please enter the details below"
         android:drawableStart="@drawable/ic_baseline_description_24"
         android:drawableLeft="@drawable/ic_baseline_description_24"
-        android:drawableTint="@color/black"
-        android:textColor="@color/black"
         android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Please enter the details below"
         android:textAlignment="center"
-        android:fontFamily="@font/pirate_of_the_seaside_bubbles"
-        android:textSize="28dp" />
+        android:textColor="@color/black"
+        android:textSize="24dp" />
 
 
     <Button
@@ -31,15 +32,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textinput"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_button"
+
+        android:fontFamily="@font/ageopersonalusebold"
         android:text="Delete Transaction"
         android:textSize="20dp"
-        android:fontFamily="@font/paradiso"
-        app:backgroundTint="#3F51B5"
+        app:backgroundTint="#E19F9F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textinput"
         app:layout_constraintVertical_bias="0.111"
@@ -51,23 +52,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="Date of Transaction"
-        app:helperText="Required*"
-
-        app:helperTextTextColor="#E91E63">
+        app:hintEnabled="true"
+        app:helperTextTextColor="@color/black"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtdel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_calendar_today_24"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
-            android:drawableTint="@color/black"
+
             android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
