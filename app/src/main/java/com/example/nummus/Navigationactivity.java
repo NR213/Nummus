@@ -1,12 +1,16 @@
 package com.example.nummus;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,11 +19,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nummus.databinding.ActivityNavigationactivityBinding;
+import com.example.nummus.loginactivity;
 
 public class Navigationactivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationactivityBinding binding;
+    NavigationView mNavigationView;
+    View mHeaderView;
+    SQLiteDatabase database;
+    TextView textViewUsername;
+    TextView textViewEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +57,17 @@ public class Navigationactivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigationactivity);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        mHeaderView =  mNavigationView.getHeaderView(0);
+        //textViewUsername = (TextView) mHeaderView.findViewById(R.id.textViewUsernameNav);
+        textViewEmail= (TextView) mHeaderView.findViewById(R.id.textView);
+
+
+
+
+
+
+
     }
 
     @Override
@@ -62,4 +83,6 @@ public class Navigationactivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }

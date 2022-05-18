@@ -63,4 +63,8 @@ public class loginactivity extends AppCompatActivity {
             }
         });
     }
+
+    public String getemail(){
+       return email.getText().toString();
+    }
 }

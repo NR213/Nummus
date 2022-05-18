@@ -112,4 +112,23 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+
+    public int sumAmount(){
+        int result = 0;
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select SUM(amount) from Userdetails", null);
+        if (cursor.moveToFirst()) result = cursor.getInt(0);
+        cursor.close();
+        MyDB.close();
+        return result;
+
+    }
+
+    public Cursor getfilterdata (String filter)
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from Userdetails where paymentMethod = ? LIMIT 2", new String[]{filter});
+        return cursor;
+    }
+
 }
