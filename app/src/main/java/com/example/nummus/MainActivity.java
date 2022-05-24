@@ -113,19 +113,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String amountTXT = amount.getText().toString();
-                String referenceTXT = reference.getText().toString();
-                String time = timeButton.getText().toString();
-                String dotTXT = mDisplayDate.getText().toString();
-                //String paymentmethodTXT = paymentMethod.toString();
-
-                String noteTXT = note.getText().toString();
-
-                Boolean checkinsertdata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
-                if (checkinsertdata == true)
-                    Toast.makeText(MainActivity.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this, "New Transaction Not Added", Toast.LENGTH_SHORT).show();
+//                String amountTXT = amount.getText().toString();
+//                String referenceTXT = reference.getText().toString();
+//                String time = timeButton.getText().toString();
+//                String dotTXT = mDisplayDate.getText().toString();
+//                //String paymentmethodTXT = paymentMethod.toString();
+//
+//                String noteTXT = note.getText().toString();
+//
+//                Boolean checkinsertdata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT, Cat);
+//                if (checkinsertdata == true)
+//                    Toast.makeText(MainActivity.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
+//                else
+//                    Toast.makeText(MainActivity.this, "New Transaction Not Added", Toast.LENGTH_SHORT).show();
             }
         });
         update.setOnClickListener(new View.OnClickListener() {
@@ -138,11 +138,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                // String paymentmethodTXT = paymentMethod.toString();
                 String noteTXT = note.getText().toString();
 
-                Boolean checkupdatedata = DB.updateuserdata(dotTXT,time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
-                if (checkupdatedata == true)
-                    Toast.makeText(MainActivity.this, "Transaction Updated", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this, "New Transaction Not Updated", Toast.LENGTH_SHORT).show();
+               // Boolean checkupdatedata = DB.updateuserdata(dotTXT,time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
+//                if (checkupdatedata == true)
+//                    Toast.makeText(MainActivity.this, "Transaction Updated", Toast.LENGTH_SHORT).show();
+//                else
+//                    Toast.makeText(MainActivity.this, "New Transaction Not Updated", Toast.LENGTH_SHORT).show();
             }
         });
     }

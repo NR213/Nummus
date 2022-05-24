@@ -51,14 +51,14 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         Button view;
 
         view = nav_vw.findViewById(R.id.btnView1);
-        data1 = nav_vw.findViewById(R.id.text_data1);
+       // data1 = nav_vw.findViewById(R.id.text_data1);
 
         DBHelper DB = new DBHelper(getContext());
-        Spinner filterList = nav_vw.findViewById(R.id.filter);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Filterlist, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        filterList.setAdapter(adapter);
-        filterList.setOnItemSelectedListener(this);
+//        Spinner filterList = nav_vw.findViewById(R.id.filter);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Filterlist, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        filterList.setAdapter(adapter);
+//        filterList.setOnItemSelectedListener(this);
         mDisplayDateview = (EditText) nav_vw.findViewById(R.id.txtview);
 
         mDisplayDateview.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +107,8 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                     buffer.append("Amount: "+res.getString(2) +"\n");
                     buffer.append("Reference: "+res.getString(3) +"\n");
                     buffer.append("PaymentMethod: "+res.getString(4) +"\n");
-                    buffer.append("Note: "+res.getString(5));
+                    buffer.append("Note: "+res.getString(5)+"\n");
+                    buffer.append("Category: "+res.getString(6)+"\n");
 
                 }
 
@@ -128,23 +129,23 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        filterlistTxt = adapterView.getItemAtPosition(i).toString();
-        DBHelper DBfilter = new DBHelper(getContext());
-        Cursor res = DBfilter.getfilterdata(filterlistTxt);
-        if(res.getCount()==0){
-            //Toast.makeText(getContext(), "No Transaction Exists", Toast.LENGTH_SHORT).show();
-            data1.setText("Null");
-            return;
-        }
-        StringBuffer buffer = new StringBuffer();
-        while(res.moveToNext()){
-            buffer.append(res.getString(0) +" ");
-            buffer.append(res.getString(1) +" ");
-            buffer.append(res.getString(2) +" ");
-            buffer.append(res.getString(4) + "\n");
-
-        }
-        data1.setText(buffer.toString());
+//        filterlistTxt = adapterView.getItemAtPosition(i).toString();
+//        DBHelper DBfilter = new DBHelper(getContext());
+//        Cursor res = DBfilter.getfilterdata(filterlistTxt);
+//        if(res.getCount()==0){
+//            //Toast.makeText(getContext(), "No Transaction Exists", Toast.LENGTH_SHORT).show();
+//            data1.setText("Null");
+//            return;
+//        }
+//        StringBuffer buffer = new StringBuffer();
+//        while(res.moveToNext()){
+//            buffer.append(res.getString(0) +" ");
+//            buffer.append(res.getString(1) +" ");
+//            buffer.append(res.getString(2) +" ");
+//            buffer.append(res.getString(4) + "\n");
+//
+//        }
+//        data1.setText(buffer.toString());
 
     }
 

@@ -2,6 +2,7 @@ package com.example.nummus;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -31,8 +32,8 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
     private FragmentHomeBinding binding;
     EditText amount, reference, doT, paymentMethod, note;
-    Button insert, update, delete, view;
-    String paymentmethodTXT;
+    Button insert, update, delete, view, next;
+    String paymentmethodTXT, Cat;
     DBHelper DB;
     DatePickerDialog.OnDateSetListener mDateSetListener;
     EditText mDisplayDate;
@@ -58,10 +59,15 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         paymentMethod.setAdapter(adapter);
         paymentMethod.setOnItemSelectedListener(this);
+        Spinner category = add.findViewById(R.id.categories);
+        ArrayAdapter<CharSequence> adapterC = ArrayAdapter.createFromResource(getContext(), R.array.diffCategory, android.R.layout.simple_spinner_item);
+        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        category.setAdapter(adapterC);
+        category.setOnItemSelectedListener(this);
         note = add.findViewById(R.id.note);
         insert = add.findViewById(R.id.btnInsert);
         update = add.findViewById(R.id.btnUpdate);
-
+        next = add.findViewById(R.id.btnnext);
         DB = new DBHelper(getContext());
 
         timeButton = (EditText) add.findViewById(R.id.timemain);
@@ -119,41 +125,71 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
             }
         });
 
-        insert.setOnClickListener(new View.OnClickListener() {
+//        insert.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String amountTXT = amount.getText().toString();
+//                String referenceTXT = reference.getText().toString();
+//                String time = timeButton.getText().toString();
+//                String dotTXT = mDisplayDate.getText().toString();
+//                //String paymentmethodTXT = paymentMethod.toString();
+//
+//                String noteTXT = note.getText().toString();
+//
+//                Boolean checkinsertdata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
+//                if (checkinsertdata == true)
+//                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
+//                else
+//                    Toast.makeText(getContext(), "New Transaction Not Added", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        update.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String amountTXT = amount.getText().toString();
+//                String referenceTXT = reference.getText().toString();
+//                String time = timeButton.getText().toString();
+//                String dotTXT = mDisplayDate.getText().toString();
+//                // String paymentmethodTXT = paymentMethod.toString();
+//                String noteTXT = note.getText().toString();
+//
+//                Boolean checkupdatedata = DB.updateuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT, Cat);
+//                if (checkupdatedata == true)
+//                    Toast.makeText(getContext(), "Transaction Updated", Toast.LENGTH_SHORT).show();
+//                else
+//                    Toast.makeText(getContext(), "New Transaction Not Updated", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String amountTXT = amount.getText().toString();
                 String referenceTXT = reference.getText().toString();
                 String time = timeButton.getText().toString();
                 String dotTXT = mDisplayDate.getText().toString();
-                //String paymentmethodTXT = paymentMethod.toString();
+
 
                 String noteTXT = note.getText().toString();
 
-                Boolean checkinsertdata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
-                if (checkinsertdata == true)
-                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getContext(), "New Transaction Not Added", Toast.LENGTH_SHORT).show();
-            }
-        });
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String amountTXT = amount.getText().toString();
-                String referenceTXT = reference.getText().toString();
-                String time = timeButton.getText().toString();
-                String dotTXT = mDisplayDate.getText().toString();
-                // String paymentmethodTXT = paymentMethod.toString();
-                String noteTXT = note.getText().toString();
+                Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT, Cat);
+//                if (checkinsertpagedata == true)
+//                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
+//                else
+//                    Toast.makeText(getContext(), "New Transaction Not Added", Toast.LENGTH_SHORT).show();
 
-                Boolean checkupdatedata = DB.updateuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT);
-                if (checkupdatedata == true)
-                    Toast.makeText(getContext(), "Transaction Updated", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getContext(), "New Transaction Not Updated", Toast.LENGTH_SHORT).show();
+                if (Cat.equals("Earnings")) {
+                    Intent intent = new Intent(getActivity(), Earnings.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(getActivity(), CostActivity.class);
+                    startActivity(intent);
+                }
             }
         });
+
+
         return add;
     }
 
@@ -165,7 +201,14 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        paymentmethodTXT = adapterView.getItemAtPosition(i).toString();
+        if(adapterView.getId() == R.id.paymentMethod){
+            paymentmethodTXT = adapterView.getItemAtPosition(i).toString();
+
+        }
+        if(adapterView.getId() == R.id.categories){
+            Cat = adapterView.getItemAtPosition(i).toString();
+
+        }
     }
 
     @Override

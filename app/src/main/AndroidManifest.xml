@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nummus">
         <activity
+            android:name=".Earnings"
+            android:exported="false" />
+        <activity
+            android:name=".CostActivity"
+            android:exported="false" />
+        <activity
             android:name=".loginactivity"
             android:exported="false" />
         <activity

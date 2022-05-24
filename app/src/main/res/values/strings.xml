@@ -7,6 +7,70 @@
         <item>Card</item>
         <item>Other</item>
     </string-array>
+    <string-array name="diffCategory">
+        <item>Cost</item>
+        <item>Earnings</item>
+    </string-array>
+    <string-array name="Earningtype">
+        <item>One-time earning</item>
+        <item>Fixed Earning</item>
+    </string-array>
+    <string-array name="Type">
+        <item>One time pay</item>
+        <item>Fixed installment</item>
+    </string-array>
+    <string-array name="category">
+        <item>Healthcare</item>
+        <item>Clothing</item>
+        <item>Food</item>
+        <item>Education</item>
+        <item>Entertainment</item>
+        <item>sports</item>
+        <item>Consumables products</item>
+        <item>Property</item>
+        <item>dwelling</item>
+        <item>Appliances - upholstery</item>
+        <item>Equipment and devices</item>
+        <item>Currency exchanges</item>
+        <item>Precious metals and stones</item>
+        <item>Tax</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="fixedinstallment">
+        <item>daily</item>
+        <item>Weekly</item>
+        <item>monthly</item>
+        <item>three months</item>
+        <item>Six months</item>
+        <item>year</item>
+    </string-array>
+    <string-array name="consumer">
+        <item>My self</item>
+        <item>For Family</item>
+        <item>For spouse</item>
+        <item>For children</item>
+        <item>Friends</item>
+        <item>Charity</item>
+        <item>Works and projects</item>
+        <item>others</item>
+    </string-array>
+    <string-array name="SourceEarnings">
+        <item>Employer</item>
+        <item>Finance Authority</item>
+        <item>Sold Items</item>
+        <item>Freelance projects</item>
+        <item>others</item>
+    </string-array>
+    <string-array name="CategoryEarnings">
+        <item>Salary</item>
+        <item>Bonus</item>
+        <item>Leave Pay</item>
+        <item>Incentive</item>
+        <item>Tax refund</item>
+        <item>Savings</item>
+        <item>Refunds</item>
+        <item>other</item>
+    </string-array>
     <string-array name="Filterlist">
         <item>Cash</item>
         <item>Card</item>

@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     android:padding="10dp"
 
-    tools:context=".ui.AddNav.AddFragment">
+    tools:context=".Addfragment">
 
     <TextView
         android:id="@+id/texttitle"
@@ -42,7 +42,7 @@
         app:hintTextColor="@color/black"
         app:startIconTint="@color/black"
         app:endIconTint="@color/black"
-        app:helperText="Required*"
+
 
         app:helperTextTextColor="@color/black">
 
@@ -56,6 +56,7 @@
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
             android:drawableTint="@color/black"
             android:drawablePadding="5dp"
+            android:editable="false"
             android:textColorHint="@color/black"
 
             />
@@ -75,7 +76,7 @@
         app:hintTextColor="@color/black"
         app:startIconTint="@color/black"
         app:endIconTint="@color/black"
-        app:helperText="Required*"
+
 
         app:helperTextTextColor="@color/black">
 
@@ -88,6 +89,7 @@
             android:drawableStart="@drawable/ic_baseline_access_time_24"
             android:drawableLeft="@drawable/ic_baseline_access_time_24"
             android:drawableTint="@color/black"
+            android:editable="false"
             android:drawablePadding="5dp"
             android:textColorHint="@color/black"
 
@@ -102,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="amount"
@@ -111,7 +113,7 @@
         app:hintTextColor="@color/black"
         app:startIconTint="@color/black"
         app:endIconTint="@color/black"
-        app:helperText="Required*"
+
 
         app:helperTextTextColor="@color/black">
 
@@ -124,6 +126,7 @@
             android:drawableStart="@drawable/ic_baseline_monetization_on_24"
             android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
             android:drawableTint="@color/black"
+            android:inputType="number"
             android:drawablePadding="5dp"
             android:textColorHint="@color/black"
 
@@ -140,7 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="reference"
@@ -149,7 +152,7 @@
         app:hintTextColor="@color/black"
         app:startIconTint="@color/black"
         app:endIconTint="@color/black"
-        app:helperText="Required*"
+
 
         app:helperTextTextColor="@color/black">
 
@@ -169,18 +172,35 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Spinner
+        android:id="@+id/categories"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/custom_button"
+        android:hint="categories"
+
+        android:inputType="textPersonName"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textStart"
+
+        android:textSize="96sp" />
 
     <Spinner
         android:id="@+id/paymentMethod"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="350dp"
         android:layout_marginEnd="32dp"
-
+        android:background="@drawable/custom_button"
         android:hint="paymentMethod"
+
         android:inputType="textPersonName"
         android:spinnerMode="dropdown"
+        android:textAlignment="textStart"
 
         android:textSize="96sp" />
 
@@ -190,7 +210,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="375dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="note"
@@ -199,7 +219,7 @@
         app:hintTextColor="@color/black"
         app:startIconTint="@color/black"
         app:endIconTint="@color/black"
-        app:helperText="Required*"
+
         app:helperTextTextColor="@color/black">
 
 
@@ -219,33 +239,49 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+<!--    <Button-->
+<!--        android:id="@+id/btnInsert"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="465dp"-->
+<!--        android:layout_marginEnd="210dp"-->
+
+
+<!--        android:fontFamily="@font/ageopersonalusebold"-->
+<!--        android:text="Add "-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:backgroundTint="#E19F9F" />-->
+
     <Button
-        android:id="@+id/btnInsert"
+        android:id="@+id/btnnext"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignTop="@+id/textinputnote"
+        android:layout_centerHorizontal="true"
+
         android:layout_marginStart="32dp"
-        android:layout_marginTop="465dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="210dp"
-
-
         android:fontFamily="@font/ageopersonalusebold"
-        android:text="Add "
+        android:text="Next "
         android:textSize="20dp"
         android:textStyle="bold"
         app:backgroundTint="#E19F9F" />
 
-    <Button
-        android:id="@+id/btnUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="210dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="465dp"
-        android:fontFamily="@font/ageopersonalusebold"
-        android:text="Update "
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:backgroundTint="#E19F9F" />
+<!--    <Button-->
+<!--        android:id="@+id/btnUpdate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="210dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="465dp"-->
+<!--        android:fontFamily="@font/ageopersonalusebold"-->
+<!--        android:text="Update "-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:backgroundTint="#E19F9F" />-->
 
 
 </RelativeLayout>

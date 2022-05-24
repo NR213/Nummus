@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="10dp"
+
+    >
+
+    <TextView
+        android:id="@+id/texttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:drawableStart="@drawable/ic_baseline_description_24"
+        android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Add Earnings"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+
+    <Spinner
+        android:id="@+id/typeEarning"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/custom_button"
+        android:hint="paymentMethod"
+
+        android:inputType="textPersonName"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textStart"
+
+        android:textSize="96sp" />
+
+
+    <Spinner
+        android:id="@+id/sourceEarning"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/custom_button"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:spinnerMode="dropdown"
+
+        android:textSize="96sp" />
+
+    <Spinner
+        android:id="@+id/fixedpopupEarning"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="32dp"
+
+        android:background="@drawable/custom_button"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:spinnerMode="dropdown"
+
+        android:textSize="96sp" />
+
+    <Spinner
+        android:id="@+id/categoryEarning"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/custom_button"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:spinnerMode="dropdown"
+
+        android:textSize="96sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputReasonEarning"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Reason"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black"
+        app:endIconTint="@color/black"
+
+        app:helperTextTextColor="@color/black">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ReasonEarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_book_24"
+            android:drawableLeft="@drawable/ic_baseline_book_24"
+            android:drawableTint="@color/black"
+            android:background="@drawable/custom_button"
+            android:drawablePadding="5dp"
+            android:textColorHint="@color/black"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btnsubmitEarning"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginEnd="210dp"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Submit"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:backgroundTint="#E19F9F" />
+
+
+</RelativeLayout>
