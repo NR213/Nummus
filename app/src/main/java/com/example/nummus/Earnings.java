@@ -3,6 +3,10 @@ package com.example.nummus;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
+
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,11 +18,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.nummus.databinding.FragmentHomeBinding;
+import com.example.nummus.ui.home.HomeFragment;
+
 public class Earnings extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     String type, category, source, fixed;
     Spinner fixedinstallment, Category, Type, Source;
     EditText Reason;
     Button Submit;
+    private FragmentHomeBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +71,13 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
                 String ReasonTxt = Reason.getText().toString();
 
                 Boolean checkinsertdata = DB.insertEarningsdata(type, category, source, ReasonTxt);
-                if (checkinsertdata == true)
+                if (checkinsertdata == true) {
                     Toast.makeText(Earnings.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
+
+                }
                 else
                     Toast.makeText(Earnings.this, "New Transaction Not Added", Toast.LENGTH_SHORT).show();
+
             }
         });
 

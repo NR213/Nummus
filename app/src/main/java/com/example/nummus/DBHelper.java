@@ -169,4 +169,34 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    public Cursor getViewdata(String value) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = null;
+        if(value.equals("Cost")) {
+             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+
+        }
+        if(value.equals("Earnings")) {
+             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+
+        }
+        if(value.equals("Cash")) {
+            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+
+        }
+        if(value.equals("Card")) {
+            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+
+        }
+        if(value.equals("Other")) {
+            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+
+        }
+        if(value.equals("Date")) {
+            cursor = DB.rawQuery("Select * from Userdetails2  ORDER BY rowid DESC LIMIT 2", null );
+
+        }
+        return cursor;
+    }
 }

@@ -173,18 +173,23 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
                 String noteTXT = note.getText().toString();
 
-                Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT, Cat);
+                if (amountTXT.equals("") || referenceTXT.equals("") || time.equals("") || dotTXT.equals("") || noteTXT.equals("")) {
+                    Toast.makeText(getContext(), "Please add all the details", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT, Cat);
 //                if (checkinsertpagedata == true)
 //                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
 //                else
 //                    Toast.makeText(getContext(), "New Transaction Not Added", Toast.LENGTH_SHORT).show();
 
-                if (Cat.equals("Earnings")) {
-                    Intent intent = new Intent(getActivity(), Earnings.class);
-                    startActivity(intent);
-                }else{
-                    Intent intent = new Intent(getActivity(), CostActivity.class);
-                    startActivity(intent);
+                    if (Cat.equals("Earnings")) {
+                        Intent intent = new Intent(getActivity(), Earnings.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getActivity(), CostActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });

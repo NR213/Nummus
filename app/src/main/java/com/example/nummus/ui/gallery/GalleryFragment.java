@@ -54,47 +54,78 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
        // data1 = nav_vw.findViewById(R.id.text_data1);
 
         DBHelper DB = new DBHelper(getContext());
-//        Spinner filterList = nav_vw.findViewById(R.id.filter);
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Filterlist, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        filterList.setAdapter(adapter);
-//        filterList.setOnItemSelectedListener(this);
-        mDisplayDateview = (EditText) nav_vw.findViewById(R.id.txtview);
+        Spinner filterList = nav_vw.findViewById(R.id.filter);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Filterlist, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        filterList.setAdapter(adapter);
+        filterList.setOnItemSelectedListener(this);
+        //mDisplayDateview = (EditText) nav_vw.findViewById(R.id.txtview);
 
-        mDisplayDateview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
+//        mDisplayDateview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Calendar cal = Calendar.getInstance();
+//                int year = cal.get(Calendar.YEAR);
+//                int month = cal.get(Calendar.MONTH);
+//                int day = cal.get(Calendar.DAY_OF_MONTH);
+//
+//                DatePickerDialog dialog = new DatePickerDialog(
+//                        getContext(),
+//                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+//                        mDateSetListenerview,
+//                        year,month,day);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                dialog.show();
+//            }
+//        });
+//
+//        mDateSetListenerview = new DatePickerDialog.OnDateSetListener() {
+//            @Override
+//            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+//                month = month + 1;
+//
+//
+//                String dateview = month + "/" + day + "/" + year;
+//                mDisplayDateview.setText(dateview);
+//            }
+//        };
 
-                DatePickerDialog dialog = new DatePickerDialog(
-                        getContext(),
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListenerview,
-                        year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-
-        mDateSetListenerview = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-
-
-                String dateview = month + "/" + day + "/" + year;
-                mDisplayDateview.setText(dateview);
-            }
-        };
+//        view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String doTTxt = mDisplayDateview.getText().toString();
+//                Cursor res = DB.getdata(doTTxt);
+//                if(res.getCount()==0){
+//                    Toast.makeText(getContext(), "No Transaction Exists", Toast.LENGTH_SHORT).show();
+//
+//                    return;
+//                }
+//                StringBuffer buffer = new StringBuffer();
+//                while(res.moveToNext()){
+//                    buffer.append("Date: " + res.getString(0) +"\n");
+//                    buffer.append("Time: "+res.getString(1) +"\n");
+//                    buffer.append("Amount: "+res.getString(2) +"\n");
+//                    buffer.append("Reference: "+res.getString(3) +"\n");
+//                    buffer.append("PaymentMethod: "+res.getString(4) +"\n");
+//                    buffer.append("Note: "+res.getString(5)+"\n");
+//                    buffer.append("Category: "+res.getString(6)+"\n");
+//
+//                }
+//
+//
+//
+//                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//                builder.setCancelable(true);
+//                builder.setTitle("User Entries");
+//                builder.setMessage(buffer.toString());
+//                builder.show();
+//            }        });
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String doTTxt = mDisplayDateview.getText().toString();
-                Cursor res = DB.getdata(doTTxt);
+                //String doTTxt = mDisplayDateview.getText().toString();
+                Cursor res = DB.getViewdata(filterlistTxt);
                 if(res.getCount()==0){
                     Toast.makeText(getContext(), "No Transaction Exists", Toast.LENGTH_SHORT).show();
 
@@ -109,6 +140,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                     buffer.append("PaymentMethod: "+res.getString(4) +"\n");
                     buffer.append("Note: "+res.getString(5)+"\n");
                     buffer.append("Category: "+res.getString(6)+"\n");
+                    buffer.append("-------------------------------"+ "\n");
 
                 }
 
@@ -129,23 +161,8 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        filterlistTxt = adapterView.getItemAtPosition(i).toString();
-//        DBHelper DBfilter = new DBHelper(getContext());
-//        Cursor res = DBfilter.getfilterdata(filterlistTxt);
-//        if(res.getCount()==0){
-//            //Toast.makeText(getContext(), "No Transaction Exists", Toast.LENGTH_SHORT).show();
-//            data1.setText("Null");
-//            return;
-//        }
-//        StringBuffer buffer = new StringBuffer();
-//        while(res.moveToNext()){
-//            buffer.append(res.getString(0) +" ");
-//            buffer.append(res.getString(1) +" ");
-//            buffer.append(res.getString(2) +" ");
-//            buffer.append(res.getString(4) + "\n");
-//
-//        }
-//        data1.setText(buffer.toString());
+        filterlistTxt = adapterView.getItemAtPosition(i).toString();
+
 
     }
 

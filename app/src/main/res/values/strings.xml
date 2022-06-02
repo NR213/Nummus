@@ -72,6 +72,9 @@
         <item>other</item>
     </string-array>
     <string-array name="Filterlist">
+        <item>Cost</item>
+        <item>Earnings</item>
+        <item>Date</item>
         <item>Cash</item>
         <item>Card</item>
         <item>Other</item>

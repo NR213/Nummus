@@ -27,19 +27,20 @@
         android:textSize="24dp" />
 
 
-<!--    <Spinner-->
-<!--        android:id="@+id/filter"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:layout_marginStart="200dp"-->
-<!--        android:layout_marginTop="180dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:background="@drawable/textview_border"-->
-<!--        android:hint="paymentMethod"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:spinnerMode="dropdown"-->
+    <Spinner
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="32dp"
 
-<!--        android:textSize="96sp" />-->
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:background="@drawable/custom_button"
+        android:spinnerMode="dropdown"
+
+        android:textSize="96sp" />
 
 <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:id="@+id/textinputdata1"-->
@@ -80,17 +81,13 @@
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
-
-
-
-
     <Button
         android:id="@+id/btnView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textinputview"
+
         android:layout_marginStart="84dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="15dp"
 
@@ -99,42 +96,42 @@
         android:textSize="20dp"
         app:backgroundTint="#E19F9F"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinputview"
+
         app:layout_constraintVertical_bias="0.111"
         tools:layout_editor_absoluteX="0dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputview"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:hint="Date"
-        app:hintEnabled="true"
-        app:helperTextTextColor="@color/black"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black">
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/textinputview"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:hint="Date"-->
+<!--        app:hintEnabled="true"-->
+<!--        app:helperTextTextColor="@color/black"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        app:boxStrokeColor="@color/black"-->
+<!--        app:hintTextColor="@color/black"-->
+<!--        app:startIconTint="@color/black"-->
+<!--        app:endIconTint="@color/black">-->
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_button"
-            android:drawableStart="@drawable/ic_baseline_calendar_today_24"
-            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
-            android:editable="false"
-            android:drawablePadding="5dp"
-            android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/txtview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/custom_button"-->
+<!--            android:drawableStart="@drawable/ic_baseline_calendar_today_24"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"-->
+<!--            android:editable="false"-->
+<!--            android:drawablePadding="5dp"-->
+<!--            android:drawableTint="@color/black"-->
+<!--            android:textColorHint="@color/black"-->
 
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+<!--            />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 </RelativeLayout>
