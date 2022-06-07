@@ -78,7 +78,11 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
                 else
                     Toast.makeText(Earnings.this, "New Transaction Not Added", Toast.LENGTH_SHORT).show();
 
+                Intent intent  = new Intent(getApplicationContext(), Navigationactivity.class);
+                startActivity(intent);
+
             }
+
         });
 
     }

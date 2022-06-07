@@ -30,4 +30,11 @@
         android:name="com.example.nummus.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_Delete"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/updatemenu"
+        android:name="com.example.nummus.UpdateFragment"
+        android:label="@string/menu_Delete"
+        tools:layout="@layout/fragment_update" />
+
 </navigation>

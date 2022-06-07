@@ -1,10 +1,8 @@
 package com.example.nummus.ui.gallery;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,31 +10,31 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nummus.DBHelper;
-import com.example.nummus.DeleteActivity;
-import com.example.nummus.MainActivity;
+import com.example.nummus.MyAdapter;
 import com.example.nummus.R;
-import com.example.nummus.ViewActivity;
 import com.example.nummus.databinding.FragmentSlideshowBinding;
 
-import java.util.Calendar;
+import java.util.ArrayList;
 
 public class GalleryFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     DatePickerDialog.OnDateSetListener mDateSetListenerview;
     EditText mDisplayDateview;
     String filterlistTxt;
     TextView data1, data2;
+    RecyclerView recyclerView;
+    ArrayList<String> Date, Time, Amount, PaymentMethod, Note, Category;
+    MyAdapter adapter1;
     private FragmentSlideshowBinding binding;
 
     View nav_vw;
@@ -59,6 +57,20 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filterList.setAdapter(adapter);
         filterList.setOnItemSelectedListener(this);
+        Date = new ArrayList<>();
+        Time = new ArrayList<>();
+        Amount = new ArrayList<>();
+        PaymentMethod = new ArrayList<>();
+        Note = new ArrayList<>();
+        Category = new ArrayList<>();
+
+
+        recyclerView = nav_vw.findViewById(R.id.recyclerview);
+        adapter1 = new MyAdapter(getContext(), Date, Time, Amount,PaymentMethod,Note,Category);
+        recyclerView.setAdapter(adapter1);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        displaydata();
+
         //mDisplayDateview = (EditText) nav_vw.findViewById(R.id.txtview);
 
 //        mDisplayDateview.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +136,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //String doTTxt = mDisplayDateview.getText().toString();
                 Cursor res = DB.getViewdata(filterlistTxt);
                 if(res.getCount()==0){
@@ -142,6 +155,19 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                     buffer.append("Category: "+res.getString(6)+"\n");
                     buffer.append("-------------------------------"+ "\n");
 
+//                else
+//                {
+//
+//                    while(res.moveToNext())
+//                    {
+//                        Date.add(res.getString(0));
+//                        Time.add(res.getString(1));
+//                        Amount.add(res.getString(2));
+//                        PaymentMethod.add(res.getString(4));
+//                        Note.add(res.getString(5));
+//                        Category.add(res.getString(6));
+//                    }
+//                }
                 }
 
 
@@ -151,7 +177,8 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                 builder.setTitle("User Entries");
                 builder.setMessage(buffer.toString());
                 builder.show();
-            }        });
+            }
+            });
 
         return nav_vw;
     }
@@ -168,7 +195,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-        data1.setText("----");
+
     }
 
 
@@ -176,5 +203,28 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void displaydata()
+    {
+        DBHelper DB = new DBHelper(getContext());
+        Cursor cursor = DB.getdata();
+        if(cursor.getCount()==0)
+        {
+            Toast.makeText(getContext(), "No Entry Exists", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else
+        {
+            while(cursor.moveToNext())
+            {
+                Date.add(cursor.getString(0));
+                Time.add(cursor.getString(1));
+                Amount.add(cursor.getString(2));
+                PaymentMethod.add(cursor.getString(4));
+              Note.add(cursor.getString(5));
+                        Category.add(cursor.getString(6));
+            }
+        }
     }
 }

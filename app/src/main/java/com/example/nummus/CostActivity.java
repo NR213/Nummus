@@ -74,6 +74,8 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
                     Toast.makeText(CostActivity.this, "New Transaction Not Added", Toast.LENGTH_SHORT).show();
 
 
+                Intent intent  = new Intent(getApplicationContext(), Navigationactivity.class);
+                startActivity(intent);
             }
         });
 

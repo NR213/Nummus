@@ -174,29 +174,36 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = null;
         if(value.equals("Cost")) {
-             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Earnings")) {
-             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Cash")) {
-            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Card")) {
-            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Other")) {
-            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{value});
+            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Date")) {
-            cursor = DB.rawQuery("Select * from Userdetails2  ORDER BY rowid DESC LIMIT 2", null );
+            cursor = DB.rawQuery("Select * from Userdetails2  ORDER BY rowid DESC ", null );
 
         }
+        return cursor;
+    }
+
+    public Cursor getdata()
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor  = DB.rawQuery("Select * from Userdetails2 ORDER BY doT DESC", null);
         return cursor;
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:padding="10dp"
-
+    android:id="@+id/fra"
     tools:context=".Addfragment">
 
     <TextView
@@ -137,56 +137,56 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputreference"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:hint="reference"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/textinputreference"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:hint="reference"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        app:boxStrokeColor="@color/black"-->
+<!--        app:hintTextColor="@color/black"-->
+<!--        app:startIconTint="@color/black"-->
+<!--        app:endIconTint="@color/black"-->
 
 
-        app:helperTextTextColor="@color/black">
+<!--        app:helperTextTextColor="@color/black">-->
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reference"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_book_24"
-            android:drawableLeft="@drawable/ic_baseline_book_24"
-            android:drawableTint="@color/black"
-            android:background="@drawable/custom_button"
-            android:drawablePadding="5dp"
-            android:textColorHint="@color/black"
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/reference"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableStart="@drawable/ic_baseline_book_24"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_book_24"-->
+<!--            android:drawableTint="@color/black"-->
+<!--            android:background="@drawable/custom_button"-->
+<!--            android:drawablePadding="5dp"-->
+<!--            android:textColorHint="@color/black"-->
 
-            />
+<!--            />-->
 
-    </com.google.android.material.textfield.TextInputLayout>
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-    <Spinner
-        android:id="@+id/categories"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/custom_button"
-        android:hint="categories"
+<!--    <Spinner-->
+<!--        android:id="@+id/categories"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="280dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:background="@drawable/custom_button"-->
+<!--        android:hint="categories"-->
 
-        android:inputType="textPersonName"
-        android:spinnerMode="dropdown"
-        android:textAlignment="textStart"
+<!--        android:inputType="textPersonName"-->
+<!--        android:spinnerMode="dropdown"-->
+<!--        android:textAlignment="textStart"-->
 
-        android:textSize="96sp" />
+<!--        android:textSize="96sp" />-->
 
     <Spinner
         android:id="@+id/paymentMethod"
@@ -270,7 +270,34 @@
         android:textStyle="bold"
         app:backgroundTint="#E19F9F" />
 
-<!--    <Button-->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/togglegroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:singleSelection="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="16dp">
+
+        <Button
+            android:id="@+id/income"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+
+            android:text="INCOME" />
+
+        <Button
+            android:id="@+id/expense"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Expense" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!--    <Button-->
 <!--        android:id="@+id/btnUpdate"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="60dp"-->
@@ -282,6 +309,5 @@
 <!--        android:textSize="20dp"-->
 <!--        android:textStyle="bold"-->
 <!--        app:backgroundTint="#E19F9F" />-->
-
-
 </RelativeLayout>
+

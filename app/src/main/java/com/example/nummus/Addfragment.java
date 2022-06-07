@@ -12,18 +12,19 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.example.nummus.DBHelper;
-import com.example.nummus.R;
 import com.example.nummus.databinding.FragmentHomeBinding;
 
 import java.util.Calendar;
@@ -32,8 +33,9 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
     private FragmentHomeBinding binding;
     EditText amount, reference, doT, paymentMethod, note;
-    Button insert, update, delete, view, next;
+    Button insert, update, delete, view, next, income, expense;
     String paymentmethodTXT, Cat;
+    ToggleButton buttongroup;
     DBHelper DB;
     DatePickerDialog.OnDateSetListener mDateSetListener;
     EditText mDisplayDate;
@@ -51,7 +53,7 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
         View add = inflater.inflate(R.layout.fragment_add2, container, false);
 
         amount = add.findViewById(R.id.amount);
-        reference = add.findViewById(R.id.reference);
+       // reference = add.findViewById(R.id.reference);
 
         //paymentMethod = findViewById(R.id.paymentMethod);
         Spinner paymentMethod = add.findViewById(R.id.paymentMethod);
@@ -59,11 +61,11 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         paymentMethod.setAdapter(adapter);
         paymentMethod.setOnItemSelectedListener(this);
-        Spinner category = add.findViewById(R.id.categories);
-        ArrayAdapter<CharSequence> adapterC = ArrayAdapter.createFromResource(getContext(), R.array.diffCategory, android.R.layout.simple_spinner_item);
-        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        category.setAdapter(adapterC);
-        category.setOnItemSelectedListener(this);
+//        Spinner category = add.findViewById(R.id.categories);
+//        ArrayAdapter<CharSequence> adapterC = ArrayAdapter.createFromResource(getContext(), R.array.diffCategory, android.R.layout.simple_spinner_item);
+//        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        category.setAdapter(adapterC);
+//        category.setOnItemSelectedListener(this);
         note = add.findViewById(R.id.note);
         insert = add.findViewById(R.id.btnInsert);
         update = add.findViewById(R.id.btnUpdate);
@@ -71,6 +73,22 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
         DB = new DBHelper(getContext());
 
         timeButton = (EditText) add.findViewById(R.id.timemain);
+
+        income = add.findViewById(R.id.income);
+        expense = add.findViewById(R.id.expense);
+
+        income.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cat = "income";
+            }
+        });
+        expense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cat = "expense";
+            }
+        });
 
 
         mDisplayDate = (EditText) add.findViewById(R.id.doTmain);
@@ -166,29 +184,31 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
             public void onClick(View view) {
 
                 String amountTXT = amount.getText().toString();
-                String referenceTXT = reference.getText().toString();
+               // String referenceTXT = reference.getText().toString();
                 String time = timeButton.getText().toString();
                 String dotTXT = mDisplayDate.getText().toString();
 
 
                 String noteTXT = note.getText().toString();
 
-                if (amountTXT.equals("") || referenceTXT.equals("") || time.equals("") || dotTXT.equals("") || noteTXT.equals("")) {
+                if (amountTXT.equals("") ||  time.equals("") || dotTXT.equals("") || noteTXT.equals("")) {
                     Toast.makeText(getContext(), "Please add all the details", Toast.LENGTH_SHORT).show();
                 } else {
 
-                    Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, referenceTXT, paymentmethodTXT, noteTXT, Cat);
+                    Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, "NULL", paymentmethodTXT, noteTXT, Cat);
 //                if (checkinsertpagedata == true)
 //                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
 //                else
 //                    Toast.makeText(getContext(), "New Transaction Not Added", Toast.LENGTH_SHORT).show();
 
-                    if (Cat.equals("Earnings")) {
+                    if (Cat.equals("income")) {
                         Intent intent = new Intent(getActivity(), Earnings.class);
                         startActivity(intent);
+
                     } else {
                         Intent intent = new Intent(getActivity(), CostActivity.class);
                         startActivity(intent);
+
                     }
                 }
             }
@@ -210,10 +230,7 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
             paymentmethodTXT = adapterView.getItemAtPosition(i).toString();
 
         }
-        if(adapterView.getId() == R.id.categories){
-            Cat = adapterView.getItemAtPosition(i).toString();
 
-        }
     }
 
     @Override

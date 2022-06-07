@@ -21,5 +21,9 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_Delete" />
+        <item
+            android:id="@+id/updatemenu"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="update" />
     </group>
 </menu>
