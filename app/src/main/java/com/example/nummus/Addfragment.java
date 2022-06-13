@@ -34,7 +34,7 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
     private FragmentHomeBinding binding;
     EditText amount, reference, doT, paymentMethod, note;
     Button insert, update, delete, view, next, income, expense;
-    String paymentmethodTXT, Cat;
+    String paymentmethodTXT, Cat, currency,valuecurrency;
     ToggleButton buttongroup;
     DBHelper DB;
     DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -61,11 +61,11 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         paymentMethod.setAdapter(adapter);
         paymentMethod.setOnItemSelectedListener(this);
-//        Spinner category = add.findViewById(R.id.categories);
-//        ArrayAdapter<CharSequence> adapterC = ArrayAdapter.createFromResource(getContext(), R.array.diffCategory, android.R.layout.simple_spinner_item);
-//        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        category.setAdapter(adapterC);
-//        category.setOnItemSelectedListener(this);
+        Spinner category = add.findViewById(R.id.currency);
+        ArrayAdapter<CharSequence> adapterC = ArrayAdapter.createFromResource(getContext(), R.array.curency, android.R.layout.simple_spinner_item);
+        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        category.setAdapter(adapterC);
+        category.setOnItemSelectedListener(this);
         note = add.findViewById(R.id.note);
         insert = add.findViewById(R.id.btnInsert);
         update = add.findViewById(R.id.btnUpdate);
@@ -194,8 +194,17 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
                 if (amountTXT.equals("") ||  time.equals("") || dotTXT.equals("") || noteTXT.equals("")) {
                     Toast.makeText(getContext(), "Please add all the details", Toast.LENGTH_SHORT).show();
                 } else {
+                    if (currency.equals("EUR")){
+                        valuecurrency = amountTXT;
+                    }else if(currency.equals("USD")){
 
-                    Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, "NULL", paymentmethodTXT, noteTXT, Cat);
+                        valuecurrency = String.valueOf(Double.parseDouble(amountTXT) /1.25);
+                    }else if(currency.equals("GBP")){
+
+                        valuecurrency = String.valueOf(Double.parseDouble(amountTXT) /1.16);
+                    }
+
+                    Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, currency, paymentmethodTXT, noteTXT, Cat);
 //                if (checkinsertpagedata == true)
 //                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
 //                else
@@ -228,6 +237,10 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         if(adapterView.getId() == R.id.paymentMethod){
             paymentmethodTXT = adapterView.getItemAtPosition(i).toString();
+
+        }
+        if(adapterView.getId() == R.id.currency){
+            currency = adapterView.getItemAtPosition(i).toString();
 
         }
 

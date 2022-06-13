@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList date_id, time_id, amount_id, paymentmethod_id, note_id, category_id;
+    private ArrayList date_id, time_id, amount_id, paymentmethod_id, note_id, category_id, currency_id;
 
-    public MyAdapter(Context context, ArrayList date_id, ArrayList time_id, ArrayList amount_id, ArrayList paymentmethod_id, ArrayList note_id, ArrayList category_id) {
+    public MyAdapter(Context context, ArrayList date_id, ArrayList time_id, ArrayList amount_id, ArrayList paymentmethod_id, ArrayList note_id, ArrayList category_id,ArrayList currency_id) {
         this.context = context;
         this.date_id = date_id;
         this.time_id = time_id;
@@ -23,6 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.paymentmethod_id = paymentmethod_id;
         this.note_id = note_id;
         this.category_id = category_id;
+        this.currency_id = currency_id;
     }
 
     @NonNull
@@ -40,6 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.paymentmethod_id.setText(String.valueOf(paymentmethod_id.get(position)));
         holder.note_id.setText(String.valueOf(note_id.get(position)));
         holder.category_id.setText(String.valueOf(category_id.get(position)));
+        holder.currency_id.setText(String.valueOf(currency_id.get(position)));
     }
 
     @Override
@@ -48,7 +50,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView date_id, time_id, amount_id, paymentmethod_id, note_id, category_id;
+        TextView date_id, time_id, amount_id, paymentmethod_id, note_id, category_id, currency_id;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             date_id = itemView.findViewById(R.id.textname);
@@ -57,6 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             paymentmethod_id = itemView.findViewById(R.id.textPaymentMethod);
             note_id = itemView.findViewById(R.id.textNote);
             category_id = itemView.findViewById(R.id.textCategory);
+            currency_id = itemView.findViewById(R.id.textcurrency);
         }
     }
 }

@@ -35,6 +35,7 @@
         android:text="Please enter the details below"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:backgroundTint="#E19F9F"
 
         android:textSize="24dp" />
 
@@ -46,9 +47,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
-
         android:background="@drawable/custom_button"
+        android:backgroundTint="#E19F9F"
         android:hint="paymentMethod"
+        android:fontFamily="@font/ageopersonalusebold"
         android:inputType="textPersonName"
         android:spinnerMode="dropdown"
 

@@ -11,12 +11,12 @@ import org.w3c.dom.Text;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
-        super(context, "Userdata9.db", null, 1);
+        super(context, "Userdata10.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table Userdetails2(doT TEXT , time TEXT, amount TEXT, reference TEXT, paymentMethod TEXT, note TEXT,cat TEXT)");
+        DB.execSQL("create Table Userdetails3(doT TEXT , time TEXT, amount TEXT, currency TEXT, paymentMethod TEXT, note TEXT,cat TEXT)");
         DB.execSQL("create Table users(username TEXT primary key, password TEXT)");
         DB.execSQL("create Table Cost(otp TEXT, category TEXT, source TEXT, reason TEXT)");
         DB.execSQL("create Table Earnings(otp TEXT, category TEXT, source TEXT, reason TEXT)");
@@ -24,22 +24,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int ii) {
-        DB.execSQL("drop Table if exists Userdetails2");
+        DB.execSQL("drop Table if exists Userdetails3");
         DB.execSQL("drop Table if exists users");
         DB.execSQL("drop Table if exists Cost");
+        DB.execSQL("drop Table if exists Earnings");
     }
 
-    public Boolean insertuserdata(String doT, String time, String amount, String reference, String paymentMethod, String note, String cat) {
+    public Boolean insertuserdata(String doT, String time, String amount, String currency, String paymentMethod, String note, String cat) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("doT", doT);
         contentValues.put("time", time);
         contentValues.put("amount", amount);
-        contentValues.put("reference", reference);
+        contentValues.put("Currency", currency);
         contentValues.put("paymentMethod", paymentMethod);
         contentValues.put("note", note);
         contentValues.put("cat", cat);
-        long result = DB.insert("Userdetails2", null, contentValues);
+        long result = DB.insert("Userdetails3", null, contentValues);
         if (result == -1) {
             return false;
         } else {
@@ -47,18 +48,18 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean updateuserdata(String doT, String time, String amount, String reference, String paymentMethod, String note, String cat) {
+    public Boolean updateuserdata(String doT, String time, String amount, String currency, String paymentMethod, String note, String cat) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("time", time);
         contentValues.put("amount", amount);
-        contentValues.put("reference", reference);
+        contentValues.put("Currency", currency);
         contentValues.put("paymentMethod", paymentMethod);
         contentValues.put("note", note);
         contentValues.put("Category", cat);
-        Cursor cursor = DB.rawQuery("Select * from Userdetails2 where doT = ?", new String[]{doT});
+        Cursor cursor = DB.rawQuery("Select * from Userdetails3 where doT = ?", new String[]{doT});
         if (cursor.getCount() > 0) {
-            long result = DB.update("Userdetails2", contentValues, "doT=?", new String[]{doT});
+            long result = DB.update("Userdetails3", contentValues, "doT=?", new String[]{doT});
             if (result == -1) {
                 return false;
             } else {
@@ -73,7 +74,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from Userdetails2 where doT = ?", new String[]{doT});
         if (cursor.getCount() > 0) {
-            long result = DB.delete("Userdetails2", "doT=?", new String[]{doT});
+            long result = DB.delete("Userdetails3", "doT=?", new String[]{doT});
             if (result == -1) {
                 return false;
             } else {
@@ -86,7 +87,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor getdata(String doT) {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from Userdetails2 where doT = ?", new String[]{doT});
+        Cursor cursor = DB.rawQuery("Select * from Userdetails3 where doT = ?", new String[]{doT});
         return cursor;
     }
 
@@ -122,7 +123,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public int sumAmount() {
         int result = 0;
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("Select SUM(amount) from Userdetails2", null);
+        Cursor cursor = MyDB.rawQuery("Select SUM(amount) from Userdetails3", null);
         if (cursor.moveToFirst()) result = cursor.getInt(0);
         cursor.close();
         MyDB.close();
@@ -132,7 +133,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor getfilterdata(String filter) {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{filter});
+        Cursor cursor = DB.rawQuery("Select * from Userdetails3 where paymentMethod = ? ORDER BY rowid DESC LIMIT 2", new String[]{filter});
         return cursor;
     }
 
@@ -174,27 +175,27 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = null;
         if(value.equals("Cost")) {
-             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC ", new String[]{value});
+             cursor = DB.rawQuery("Select * from Userdetails3 where cat = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Earnings")) {
-             cursor = DB.rawQuery("Select * from Userdetails2 where cat = ? ORDER BY rowid DESC ", new String[]{value});
+             cursor = DB.rawQuery("Select * from Userdetails3 where cat = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Cash")) {
-            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
+            cursor = DB.rawQuery("Select * from Userdetails3 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Card")) {
-            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
+            cursor = DB.rawQuery("Select * from Userdetails3 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Other")) {
-            cursor = DB.rawQuery("Select * from Userdetails2 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
+            cursor = DB.rawQuery("Select * from Userdetails3 where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
         }
         if(value.equals("Date")) {
-            cursor = DB.rawQuery("Select * from Userdetails2  ORDER BY rowid DESC ", null );
+            cursor = DB.rawQuery("Select * from Userdetails3  ORDER BY rowid DESC ", null );
 
         }
         return cursor;
@@ -203,7 +204,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor getdata()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor  = DB.rawQuery("Select * from Userdetails2 ORDER BY doT DESC", null);
+        Cursor cursor  = DB.rawQuery("Select * from Userdetails3 ORDER BY doT DESC", null);
         return cursor;
     }
 }

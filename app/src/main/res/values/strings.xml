@@ -79,6 +79,11 @@
         <item>Card</item>
         <item>Other</item>
     </string-array>
+    <string-array name="curency">
+        <item>EUR</item>
+        <item>USD</item>
+        <item>GBP</item>
+    </string-array>
     <string name="title_activity_navigationactivity">Navigationactivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -33,7 +33,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
     String filterlistTxt;
     TextView data1, data2;
     RecyclerView recyclerView;
-    ArrayList<String> Date, Time, Amount, PaymentMethod, Note, Category;
+    ArrayList<String> Date, Time, Amount, PaymentMethod, Note, Category, Currency;
     MyAdapter adapter1;
     private FragmentSlideshowBinding binding;
 
@@ -63,10 +63,11 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         PaymentMethod = new ArrayList<>();
         Note = new ArrayList<>();
         Category = new ArrayList<>();
+        Currency = new ArrayList<>();
 
 
         recyclerView = nav_vw.findViewById(R.id.recyclerview);
-        adapter1 = new MyAdapter(getContext(), Date, Time, Amount,PaymentMethod,Note,Category);
+        adapter1 = new MyAdapter(getContext(), Date, Time, Amount,PaymentMethod,Note,Category, Currency);
         recyclerView.setAdapter(adapter1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         displaydata();
@@ -149,7 +150,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                     buffer.append("Date: " + res.getString(0) +"\n");
                     buffer.append("Time: "+res.getString(1) +"\n");
                     buffer.append("Amount: "+res.getString(2) +"\n");
-                    buffer.append("Reference: "+res.getString(3) +"\n");
+                    buffer.append("Currency: "+res.getString(3) +"\n");
                     buffer.append("PaymentMethod: "+res.getString(4) +"\n");
                     buffer.append("Note: "+res.getString(5)+"\n");
                     buffer.append("Category: "+res.getString(6)+"\n");
@@ -221,9 +222,10 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                 Date.add(cursor.getString(0));
                 Time.add(cursor.getString(1));
                 Amount.add(cursor.getString(2));
+                Currency.add(cursor.getString(3));
                 PaymentMethod.add(cursor.getString(4));
               Note.add(cursor.getString(5));
-                        Category.add(cursor.getString(6));
+              Category.add(cursor.getString(6));
             }
         }
     }

@@ -8,4 +8,9 @@
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+    <style name="button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="checkedIconTint">#E19F9F</item>
+
+
+    </style>
 </resources>

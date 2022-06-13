@@ -23,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="Date: "
                 android:textSize="16dp"
+                android:fontFamily="@font/ageopersonalusebold"
                 android:textColor="@color/white"
                 style="bold"/>
 
@@ -31,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
+
                 android:textColor="@color/white"
                 style="bold"/>
         </LinearLayout>        <LinearLayout
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:text="Time: "
             android:textSize="16dp"
+            android:fontFamily="@font/ageopersonalusebold"
             android:textColor="@color/white"
             style="bold"/>
 
@@ -65,6 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Amount: "
+                android:fontFamily="@font/ageopersonalusebold"
                 android:textSize="16dp"
                 android:textColor="@color/white"
                 style="bold"/>
@@ -74,6 +78,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
+
+                android:textColor="@color/white"
+                style="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Currency: "
+                android:fontFamily="@font/ageopersonalusebold"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                style="bold"/>
+
+            <TextView
+                android:id="@+id/textcurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+
                 android:textColor="@color/white"
                 style="bold"/>
         </LinearLayout>
@@ -88,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:text="PaymentMethod: "
                 android:textSize="16dp"
+                android:fontFamily="@font/ageopersonalusebold"
                 android:textColor="@color/white"
                 style="bold"/>
 
@@ -96,6 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
+                android:fontFamily="@font/ageopersonalusebold"
                 android:textColor="@color/white"
                 style="bold"/>
         </LinearLayout>

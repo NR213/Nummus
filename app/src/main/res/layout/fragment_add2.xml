@@ -103,20 +103,19 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="amount"
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:startIconTint="@color/black"
         app:endIconTint="@color/black"
+        app:helperTextTextColor="@color/black"
+        app:hintTextColor="@color/black"
 
 
-        app:helperTextTextColor="@color/black">
-
+        app:startIconTint="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/amount"
@@ -125,19 +124,16 @@
             android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_baseline_monetization_on_24"
             android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
+            android:drawablePadding="5dp"
             android:drawableTint="@color/black"
             android:inputType="number"
-            android:drawablePadding="5dp"
             android:textColorHint="@color/black"
 
             />
-
-
-
-
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:id="@+id/textinputreference"-->
 <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
 <!--        android:layout_width="match_parent"-->
@@ -189,16 +185,34 @@
 <!--        android:textSize="96sp" />-->
 
     <Spinner
+        android:id="@+id/currency"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        android:layout_marginStart="32dp"
+
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="260dp"
+
+        android:background="@drawable/custom_button"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:paddingLeft="25dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textStart"
+        android:textSize="96sp" />
+
+    <Spinner
         android:id="@+id/paymentMethod"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="230dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
         android:hint="paymentMethod"
-
         android:inputType="textPersonName"
+        android:paddingLeft="20dp"
         android:spinnerMode="dropdown"
         android:textAlignment="textStart"
 
@@ -210,7 +224,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:hint="note"
@@ -258,11 +272,9 @@
         android:id="@+id/btnnext"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignTop="@+id/textinputnote"
         android:layout_centerHorizontal="true"
-
         android:layout_marginStart="32dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="460dp"
         android:layout_marginEnd="210dp"
         android:fontFamily="@font/ageopersonalusebold"
         android:text="Next "
@@ -276,13 +288,15 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         app:singleSelection="true"
+        android:outlineAmbientShadowColor="@color/black"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="16dp">
 
         <Button
             android:id="@+id/income"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/button"
+
             android:layout_width="150dp"
             android:layout_height="wrap_content"
 
