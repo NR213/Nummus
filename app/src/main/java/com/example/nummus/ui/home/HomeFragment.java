@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -29,6 +30,21 @@ public class HomeFragment extends Fragment {
         DBHelper DB = new DBHelper(getContext());
         text = v.findViewById(R.id.text_home);
         text.setText("Euro: " + DB.sumAmount());
+
+        Cursor res = DB.getprimarykeyearnings();
+        if(res.getCount()==0){
+
+
+
+        }
+        StringBuffer buffer = new StringBuffer();
+        while(res.moveToNext()) {
+            buffer.append("costkey: " + res.getString(0) + "\n");
+
+            buffer.append("-------------------------------" + "\n");
+        }
+        text = v.findViewById(R.id.textView2);
+        text.setText(buffer.toString());
         return v;
     }
 

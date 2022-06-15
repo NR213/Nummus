@@ -214,7 +214,21 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor getprimarykey()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor  = DB.rawQuery("Select * from Userdetails ORDER BY doT DESC LIMIT 1", null);
+        Cursor cursor  = DB.rawQuery("Select * from Userdetails ORDER BY rowid DESC LIMIT 1", null);
+        return cursor;
+    }
+
+    public Cursor getprimarykeycost()
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor  = DB.rawQuery("Select * from Cost ", null);
+        return cursor;
+    }
+
+    public Cursor getprimarykeyearnings()
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor  = DB.rawQuery("Select * from Earnings ", null);
         return cursor;
     }
 }

@@ -82,6 +82,7 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
                     datainsert();
                 }
                 //int key = Integer.parseInt(primarykeyvalue);
+                Log.d(primarykeyvalue, "primarykeyvalue");
                 Boolean checkinsertdata = DB.insertCostdata(primarykeyvalue,type, category, source, ReasonTxt);
                 if (checkinsertdata == true && checkinsertpagedata == true)
                     Toast.makeText(CostActivity.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
