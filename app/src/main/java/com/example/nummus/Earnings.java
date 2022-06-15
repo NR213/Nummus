@@ -7,6 +7,7 @@ import android.app.Fragment;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -22,7 +23,8 @@ import com.example.nummus.databinding.FragmentHomeBinding;
 import com.example.nummus.ui.home.HomeFragment;
 
 public class Earnings extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    String type, category, source, fixed;
+    String type, category, source, fixed, primarykeyvalue;
+
     Spinner fixedinstallment, Category, Type, Source;
     EditText Reason;
     Button Submit;
@@ -69,9 +71,22 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View view) {
                 String ReasonTxt = Reason.getText().toString();
+                String dotTXT = getIntent().getExtras().getString("dotTXT");
+                String time = getIntent().getExtras().getString("time");
+                String amountTXT = getIntent().getExtras().getString("amountTXT");
+                String currency = getIntent().getExtras().getString("currency");
+                String valuecurrency = getIntent().getExtras().getString("valuecurrency");
+                String paymentmethodTXT = getIntent().getExtras().getString("paymentmethodTXT");
+                String noteTXT = getIntent().getExtras().getString("noteTXT");
+                String Cat = getIntent().getExtras().getString("Cat");
 
-                Boolean checkinsertdata = DB.insertEarningsdata(type, category, source, ReasonTxt);
-                if (checkinsertdata == true) {
+                Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, currency,valuecurrency, paymentmethodTXT, noteTXT, Cat);
+                if (checkinsertpagedata == true){
+                    datainsert();
+                }
+                //int key = Integer.parseInt(primarykeyvalue);
+                Boolean checkinsertdata = DB.insertEarningsdata(primarykeyvalue,type, category, source, ReasonTxt);
+                if (checkinsertdata == true && checkinsertpagedata == true) {
                     Toast.makeText(Earnings.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
 
                 }
@@ -111,6 +126,24 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
             source = adapterView.getItemAtPosition(i).toString();
         }
 
+    }
+
+    public void datainsert(){
+        DBHelper DB = new DBHelper(this);
+
+        Cursor cursor = DB.getprimarykey();
+        if(cursor.getCount()==0)
+        {
+
+        }
+        else
+        {
+            while(cursor.moveToNext())
+            {
+                primarykeyvalue = cursor.getString(0);
+
+            }
+        }
     }
 
     @Override

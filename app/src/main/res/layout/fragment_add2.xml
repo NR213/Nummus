@@ -296,9 +296,10 @@
         <Button
             android:id="@+id/income"
             style="@style/button"
-
+            android:fontFamily="@font/ageopersonalusebold"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
 
             android:text="INCOME" />
 
@@ -307,6 +308,8 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ageopersonalusebold"
+            android:backgroundTint="@color/white"
             android:text="Expense" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>

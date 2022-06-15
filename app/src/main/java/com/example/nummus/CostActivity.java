@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,7 +22,8 @@ import com.example.nummus.ui.home.HomeFragment;
 import java.lang.ref.Reference;
 
 public class CostActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    String type, category, source, fixed;
+    String type, category, source, fixed, primarykeyvalue;
+
     Spinner fixedinstallment, Category, Type, Source;
     EditText Reason;
     Button Submit;
@@ -66,9 +68,22 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 String ReasonTxt = Reason.getText().toString();
-
-                Boolean checkinsertdata = DB.insertCostdata(type, category, source, ReasonTxt);
-                if (checkinsertdata == true)
+                String dotTXT = getIntent().getExtras().getString("dotTXT");
+                String time = getIntent().getExtras().getString("time");
+                String amountTXT = getIntent().getExtras().getString("amountTXT");
+                String currency = getIntent().getExtras().getString("currency");
+                String valuecurrency = getIntent().getExtras().getString("valuecurrency");
+                String paymentmethodTXT = getIntent().getExtras().getString("paymentmethodTXT");
+                String noteTXT = getIntent().getExtras().getString("noteTXT");
+                String Cat = getIntent().getExtras().getString("Cat");
+//
+                Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, currency ,valuecurrency, paymentmethodTXT, noteTXT, Cat);
+                if (checkinsertpagedata == true){
+                    datainsert();
+                }
+                //int key = Integer.parseInt(primarykeyvalue);
+                Boolean checkinsertdata = DB.insertCostdata(primarykeyvalue,type, category, source, ReasonTxt);
+                if (checkinsertdata == true && checkinsertpagedata == true)
                     Toast.makeText(CostActivity.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(CostActivity.this, "New Transaction Not Added", Toast.LENGTH_SHORT).show();
@@ -79,6 +94,24 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+    }
+
+    public void datainsert(){
+        DBHelper DB = new DBHelper(this);
+
+        Cursor cursor = DB.getprimarykey();
+        if(cursor.getCount()==0)
+        {
+
+        }
+        else
+        {
+            while(cursor.moveToNext())
+            {
+                primarykeyvalue = cursor.getString(0);
+
+            }
+        }
     }
 
     @Override

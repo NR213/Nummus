@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList date_id, time_id, amount_id, paymentmethod_id, note_id, category_id, currency_id;
+    private ArrayList date_id, time_id, amount_id, paymentmethod_id, note_id, category_id, currency_id, key_id;
 
-    public MyAdapter(Context context, ArrayList date_id, ArrayList time_id, ArrayList amount_id, ArrayList paymentmethod_id, ArrayList note_id, ArrayList category_id,ArrayList currency_id) {
+    public MyAdapter(Context context, ArrayList key_id, ArrayList date_id, ArrayList time_id, ArrayList amount_id, ArrayList paymentmethod_id, ArrayList note_id, ArrayList category_id,ArrayList currency_id) {
         this.context = context;
         this.date_id = date_id;
         this.time_id = time_id;
@@ -24,6 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.note_id = note_id;
         this.category_id = category_id;
         this.currency_id = currency_id;
+        this.key_id = key_id;
     }
 
     @NonNull
@@ -35,6 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.key_id.setText(String.valueOf(key_id.get(position)));
         holder.date_id.setText(String.valueOf(date_id.get(position)));
         holder.time_id.setText(String.valueOf(time_id.get(position)));
         holder.amount_id.setText(String.valueOf(amount_id.get(position)));
@@ -50,9 +52,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView date_id, time_id, amount_id, paymentmethod_id, note_id, category_id, currency_id;
+        TextView date_id, time_id, amount_id, paymentmethod_id, note_id, category_id, currency_id, key_id;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            key_id = itemView.findViewById(R.id.textkeyUser);
             date_id = itemView.findViewById(R.id.textname);
             time_id = itemView.findViewById(R.id.textemail);
             amount_id = itemView.findViewById(R.id.textage);

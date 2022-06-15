@@ -194,17 +194,18 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
                 if (amountTXT.equals("") ||  time.equals("") || dotTXT.equals("") || noteTXT.equals("")) {
                     Toast.makeText(getContext(), "Please add all the details", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (currency.equals("EUR")){
+
+//                    if (currency.equals("EUR")){
                         valuecurrency = amountTXT;
-                    }else if(currency.equals("USD")){
+//                    }else if(currency.equals("USD")){
+//
+//                        valuecurrency = String.valueOf(Double.parseDouble(amountTXT) /1.25);
+//                    }else if(currency.equals("GBP")){
+//
+//                        valuecurrency = String.valueOf(Double.parseDouble(amountTXT) /1.16);
+//                    }
 
-                        valuecurrency = String.valueOf(Double.parseDouble(amountTXT) /1.25);
-                    }else if(currency.equals("GBP")){
-
-                        valuecurrency = String.valueOf(Double.parseDouble(amountTXT) /1.16);
-                    }
-
-                    Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, currency, paymentmethodTXT, noteTXT, Cat);
+                    //Boolean checkinsertpagedata = DB.insertuserdata(dotTXT, time, amountTXT, currency, paymentmethodTXT, noteTXT, Cat);
 //                if (checkinsertpagedata == true)
 //                    Toast.makeText(getContext(), "New Transaction Added", Toast.LENGTH_SHORT).show();
 //                else
@@ -212,10 +213,26 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
                     if (Cat.equals("income")) {
                         Intent intent = new Intent(getActivity(), Earnings.class);
+                        intent.putExtra("dotTXT", dotTXT);
+                        intent.putExtra("time", time);
+                        intent.putExtra("amountTXT", amountTXT);
+                        intent.putExtra("currency", currency);
+                        intent.putExtra("valuecurrency", valuecurrency);
+                        intent.putExtra("paymentmethodTXT", paymentmethodTXT);
+                        intent.putExtra("noteTXT", noteTXT);
+                        intent.putExtra("Cat", Cat);
                         startActivity(intent);
 
                     } else {
                         Intent intent = new Intent(getActivity(), CostActivity.class);
+                        intent.putExtra("dotTXT", dotTXT);
+                        intent.putExtra("time", time);
+                        intent.putExtra("amountTXT", amountTXT);
+                        intent.putExtra("currency", currency);
+                        intent.putExtra("valuecurrency", valuecurrency);
+                        intent.putExtra("paymentmethodTXT", paymentmethodTXT);
+                        intent.putExtra("noteTXT", noteTXT);
+                        intent.putExtra("Cat", Cat);
                         startActivity(intent);
 
                     }
