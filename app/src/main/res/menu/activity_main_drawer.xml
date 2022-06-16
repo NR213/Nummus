@@ -25,5 +25,9 @@
             android:id="@+id/updatemenu"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="update" />
+        <item
+            android:id="@+id/reportsmenu"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_Reports" />
     </group>
 </menu>

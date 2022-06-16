@@ -96,9 +96,26 @@
     <string name="menu_Add">Add</string>
     <string name="menu_View">View</string>
     <string name="menu_Delete">Delete</string>
+    <string name="menu_Update">Update</string>
+    <string name="menu_Reports">Reports</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_nav2">Nav2Activity</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="ourmotto">Manage your money, Manage your life</string>
+    <string name="goalexplain">Define monthly cost goal</string>
+    <string name="transaction_form_explaination">Transaction details</string>
+
+    <string-array name="rduration">
+        <item>7 days</item>
+        <item>15 days</item>
+        <item>30 days</item>
+        <item>6 months</item>
+        <item>1 year</item>
+        <item>All</item>
+    </string-array>
+
 </resources>

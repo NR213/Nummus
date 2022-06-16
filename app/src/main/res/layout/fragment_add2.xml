@@ -22,7 +22,7 @@
         android:drawablePadding="5dp"
         android:drawableTint="@color/black"
         android:fontFamily="@font/ageopersonalusebold"
-        android:text="Please enter the details below"
+        android:text="@string/transaction_form_explaination"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24dp" />

@@ -1,4 +1,5 @@
 package com.example.nummus;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,7 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieEntry;
+
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
@@ -20,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("create Table users(username TEXT, password TEXT)");
         DB.execSQL("create Table Cost(numbercost TEXT,otp TEXT, category TEXT, source TEXT, reason TEXT)");
         DB.execSQL("create Table Earnings(numberearnings TEXT,otp TEXT, category TEXT, source TEXT, reason TEXT)");
+        //DB.execSQL("create Table UserGoals(GoalId INTEGER primary key, GoalName TEXT, thevalue TEXT)");
     }
 
     @Override
@@ -231,4 +238,168 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor  = DB.rawQuery("Select * from Earnings ", null);
         return cursor;
     }
+
+    // Armin Queries--------------
+
+    public Boolean insertGoalsdata(int GoalId, String GoalName, String thevalue) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("GoalId", GoalId);
+        contentValues.put("UserGoals", GoalName);
+        contentValues.put("thevalue", thevalue);
+
+        long result = DB.insert("UserGoals", null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    public Boolean updateGoalsdata(int GoalId, String GoalName, String thevalue) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("GoalId", GoalId);
+        contentValues.put("UserGoals", GoalName);
+        contentValues.put("thevalue", thevalue);
+
+        long result = DB.update("UserGoals", contentValues, "GoalName = ?", new String[]{GoalName});
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public String costgoal(String TheGoalName) {
+        String result = "800";
+        String query;
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+
+        if (TheGoalName.equals("expense")){
+            query = "SELECT thevalue FROM UserGoals WHERE GoalName = 'expense'";
+        }
+        else{
+            query = "SELECT thevalue FROM UserGoals WHERE GoalName = 'earning'";
+        }
+
+        Cursor c = MyDB.rawQuery(query, null);
+        c.moveToFirst();
+
+        //if(c.getString(c.getColumnIndex("thevalue"))!= null){
+            //result = c.getString(c.getColumnIndex("thevalue"));
+        //}
+
+        c.close();
+        MyDB.close();
+        return result;
+
+    }
+
+
+    public ArrayList CostPointer(float CostGoal){
+
+        float TheTotal = TestAmount();
+        if (TheTotal >= CostGoal){
+            CostGoal = TheTotal;
+        }
+        float costpercent = TheTotal/(CostGoal*2);
+        float beforePoint = (float) (costpercent - 0.01);
+        float afterpoint = (float) (0.50-costpercent);
+
+        ArrayList<PieEntry> qrestult = new ArrayList<>();
+        qrestult.add(new PieEntry( beforePoint, "before"));
+        qrestult.add(new PieEntry( 0.01f, "value"));
+        qrestult.add(new PieEntry(afterpoint, "after"));
+        qrestult.add(new PieEntry(0.50f, "bellow"));
+
+        return qrestult;
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<Entry> TimeSeriesData(String SelDuration){
+
+        ArrayList<Entry> Arrayrestult = new ArrayList<>();
+
+        SQLiteDatabase MyDB = getWritableDatabase();
+
+        String query;
+
+        if (SelDuration.equals("7 days")){
+            query = "SELECT SUM(amount) as Samount FROM Userdetails GROUP BY doT ORDER BY doT LIMIT(7) ";
+        }
+        else if (SelDuration.equals("15 days")){
+            query = "SELECT SUM(amount) as Samount FROM Userdetails GROUP BY doT ORDER BY doT LIMIT(15)";
+        }
+        else if (SelDuration.equals("30 days")){
+            query = "SELECT SUM(amount) as Samount FROM Userdetails GROUP BY doT ORDER BY doT LIMIt(30)";
+        }
+        else if (SelDuration.equals("6 months")){
+            query = "SELECT SUM(amount) as Samount FROM Userdetails GROUP BY doT ORDER BY doT LIMIt(180)";
+        }
+        else if (SelDuration.equals("1 year")){
+            query = "SELECT SUM(amount) as Samount FROM Userdetails GROUP BY doT ORDER BY doT LIMIt(365)";
+        }
+        else{
+            query = "SELECT SUM(amount) as Samount FROM Userdetails GROUP BY doT ORDER BY doT ";
+        }
+
+
+        //String query = "SELECT SUM(amount) as Samount FROM Userdetails2 GROUP BY doT ORDER BY doT ";
+
+        Cursor c = MyDB.rawQuery(query, null);
+        c.moveToFirst();
+        int xval = 0;
+        while (!c.isAfterLast()){
+            int myAmount = c.getInt(c.getColumnIndex("Samount"));
+            xval += 1;
+
+            Arrayrestult.add(new Entry( xval ,myAmount));
+
+            c.moveToNext();
+        }
+
+        return Arrayrestult;
+    }
+
+
+    @SuppressLint("Range")
+    public String databaseTostring(){
+
+        String dbString = "";
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT * FROM Userdetails WHERE 1";
+
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()){
+            if(c.getString(c.getColumnIndex("amount")) != null) {
+
+                dbString += c.getString(c.getColumnIndex("amount"));
+                dbString +="\n";
+            }
+            c.moveToNext();
+
+        }
+
+        db.close();
+        return dbString;
+    }
+
+
+    public int TestAmount() {
+        int result = 0;
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("SELECT SUM(amount) as Samount FROM Userdetails ORDER BY doT LIMIt(30)", null);
+        if (cursor.moveToFirst()) result = cursor.getInt(0);
+        cursor.close();
+        MyDB.close();
+        return result;
+
+    }
+    //------------------------------------------------------
+
+
 }

@@ -34,7 +34,13 @@
     <fragment
         android:id="@+id/updatemenu"
         android:name="com.example.nummus.UpdateFragment"
-        android:label="@string/menu_Delete"
+        android:label="@string/menu_Update"
         tools:layout="@layout/fragment_update" />
+
+    <fragment
+        android:id="@+id/reportsmenu"
+        android:name="com.example.nummus.Reports"
+        android:label="@string/menu_Reports"
+        tools:layout="@layout/fragment_reports" />
 
 </navigation>
