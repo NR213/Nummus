@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/box.xml" value="0.1575" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/custom_button.xml" value="0.1575" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_loginactivity.xml" value="0.20261713803292528" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_add.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_add2.xml" value="0.20261713803292528" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_gallery.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_home.xml" value="0.20261713803292528" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_reports.xml" value="0.20521590423257802" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

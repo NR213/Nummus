@@ -181,33 +181,34 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getViewdata(String value) {
+    public Cursor getViewdata(String date, String category, String amountmin, String amountmax, String payment) {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = null;
-        if(value.equals("Cost")) {
-             cursor = DB.rawQuery("Select * from Userdetails where cat = ? ORDER BY rowid DESC ", new String[]{value});
+        if(amountmin.isEmpty() && amountmax.isEmpty() && category.equals("none") && date.isEmpty() && payment.equals("none")) {
+             cursor = DB.rawQuery("Select * from Userdetails ORDER BY rowid DESC", null);
+
+        }else if (category.equals("none") && amountmin.isEmpty() && amountmax.isEmpty() && payment.equals("none")) {
+
+             cursor = DB.rawQuery("Select * from Userdetails where doT = ? ORDER BY rowid DESC ", new String[]{date});
 
         }
-        if(value.equals("Earnings")) {
-             cursor = DB.rawQuery("Select * from Userdetails where cat = ? ORDER BY rowid DESC ", new String[]{value});
+        else if (amountmin.isEmpty() && amountmax.isEmpty() && !date.isEmpty() && !category.equals("none") && payment.equals("none"))
+         {
+            cursor = DB.rawQuery("Select * from Userdetails where doT = ? and cat = ? ORDER BY rowid DESC ", new String[]{date, category});
 
         }
-        if(value.equals("Cash")) {
-            cursor = DB.rawQuery("Select * from Userdetails where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
+        else if (amountmin.isEmpty() && amountmax.isEmpty() && !date.isEmpty() && !category.equals("none") && !payment.equals("none"))
+        {
+            cursor = DB.rawQuery("Select * from Userdetails where doT = ? and cat = ? and paymentMethod = ? ORDER BY rowid DESC ", new String[]{date, category, payment});
 
         }
-        if(value.equals("Card")) {
-            cursor = DB.rawQuery("Select * from Userdetails where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
+        else if(!date.isEmpty() && !amountmin.isEmpty() && !amountmax.isEmpty() && !category.equals("none") && !payment.equals("none"))
+        {
+            cursor = DB.rawQuery("Select * from Userdetails where doT = ? and cat = ? and paymentMethod = ? and amount >= ? and amount <= ? ORDER BY rowid DESC ", new String[]{date, category, payment, amountmin, amountmax});
 
         }
-        if(value.equals("Other")) {
-            cursor = DB.rawQuery("Select * from Userdetails where paymentMethod = ? ORDER BY rowid DESC ", new String[]{value});
 
-        }
-        if(value.equals("Date")) {
-            cursor = DB.rawQuery("Select * from Userdetails  ORDER BY rowid DESC ", null );
 
-        }
         return cursor;
     }
 
@@ -399,6 +400,8 @@ public class DBHelper extends SQLiteOpenHelper {
         return result;
 
     }
+
+
     //------------------------------------------------------
 
 

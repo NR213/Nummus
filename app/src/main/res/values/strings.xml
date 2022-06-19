@@ -61,6 +61,12 @@
         <item>Freelance projects</item>
         <item>others</item>
     </string-array>
+    <string-array name="pmdrop">
+        <item>none</item>
+        <item>Cash</item>
+        <item>Card</item>
+        <item>Others</item>
+    </string-array>
     <string-array name="CategoryEarnings">
         <item>Salary</item>
         <item>Bonus</item>
@@ -72,12 +78,11 @@
         <item>other</item>
     </string-array>
     <string-array name="Filterlist">
-        <item>Cost</item>
-        <item>Earnings</item>
-        <item>Date</item>
-        <item>Cash</item>
-        <item>Card</item>
-        <item>Other</item>
+        <item>none</item>
+        <item>income</item>
+        <item>expense</item>
+
+
     </string-array>
     <string-array name="curency">
         <item>EUR</item>
