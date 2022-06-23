@@ -27,12 +27,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nummus.DBHelper;
 import com.example.nummus.MyAdapter;
 import com.example.nummus.R;
+import com.example.nummus.RecyclerInterface;
 import com.example.nummus.databinding.FragmentSlideshowBinding;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class GalleryFragment extends Fragment implements AdapterView.OnItemSelectedListener{
+public class GalleryFragment extends Fragment implements AdapterView.OnItemSelectedListener, RecyclerInterface {
     DatePickerDialog.OnDateSetListener mDateSetListenerview;
     EditText mDisplayDateview;
     String filterlistTxt, doTTxt, mintxt, maxtxt, paymentlist;
@@ -78,7 +79,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         min = nav_vw.findViewById(R.id.text_amountmin);
         max = nav_vw.findViewById(R.id.text_amountmax);
         recyclerView = nav_vw.findViewById(R.id.recyclerview);
-        adapter1 = new MyAdapter(getContext(),key, Date, Time, Amount,PaymentMethod,Note,Category, Currency);
+        adapter1 = new MyAdapter(getContext(),key, Date, Time, Amount,PaymentMethod,Note,Category, Currency, this);
         recyclerView.setAdapter(adapter1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -192,6 +193,8 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
     }
 
 
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -221,5 +224,33 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
               Category.add(cursor.getString(8));
             }
         }
+    }
+
+    @Override
+    public void onClick(int position) {
+        String val = key.get(position);
+        datadelete(val);
+        key.remove(position);
+        Time.remove(position);
+        Date.remove(position);
+        Amount.remove(position);
+        Currency.remove(position);
+        PaymentMethod.remove(position);
+        Note.remove(position);
+        Category.remove(position);
+        adapter1.notifyItemRemoved(position);
+        adapter1.notifyItemRangeChanged(position, key.size());
+
+
+    }
+
+    public void datadelete(String val){
+        DBHelper DB = new DBHelper(getContext());
+        Boolean checkudeletedata = DB.deletedata(val);
+
+        if(checkudeletedata==true)
+            Toast.makeText(getContext(), "Transaction Deleted", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getContext(), "Transaction Doesn't Exist", Toast.LENGTH_SHORT).show();
     }
 }

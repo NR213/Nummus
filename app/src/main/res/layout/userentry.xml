@@ -107,6 +107,7 @@
                 android:textColor="@color/white"
                 style="bold"/>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -199,6 +200,19 @@
                 android:textColor="@color/white"
                 style="bold"/>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonrc"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/customdesign"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_delete_24"
+            android:paddingLeft="18dp"
+            android:text=""
+            app:backgroundTint="@color/white" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
 

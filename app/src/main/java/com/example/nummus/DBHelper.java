@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v4.os.IResultReceiver;
 
 import androidx.annotation.Nullable;
 
@@ -78,11 +79,12 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean deletedata(String doT) {
+    public Boolean deletedata(String number) {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from Userdetails where doT = ?", new String[]{doT});
+        Cursor cursor = DB.rawQuery("Select * from Userdetails where number = ?", new String[]{number});
         if (cursor.getCount() > 0) {
-            long result = DB.delete("Userdetails", "doT=?", new String[]{doT});
+           long result = DB.delete("Userdetails", "number=?", new String[]{number});
+
             if (result == -1) {
                 return false;
             } else {

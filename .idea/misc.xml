@@ -5,12 +5,16 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/box.xml" value="0.1575" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/custom_button.xml" value="0.1575" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/drawable/customdesign.xml" value="0.1575" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/activity_loginactivity.xml" value="0.20261713803292528" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_add.xml" value="0.20521590423257802" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_add2.xml" value="0.20261713803292528" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_gallery.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_home.xml" value="0.20261713803292528" />
         <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/fragment_reports.xml" value="0.20521590423257802" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/layout/userentry.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/menu/activity_main_drawer.xml" value="0.20261713803292528" />
+        <entry key="..\:/AndroidStudioProjects/Nummus/app/src/main/res/menu/navigationactivity.xml" value="0.20261713803292528" />
       </map>
     </option>
   </component>

@@ -99,7 +99,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_Add">Add</string>
-    <string name="menu_View">View</string>
+    <string name="menu_View">View &amp; Delete</string>
     <string name="menu_Delete">Delete</string>
     <string name="menu_Update">Update</string>
     <string name="menu_Reports">Reports</string>
