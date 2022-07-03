@@ -43,4 +43,17 @@
         android:label="@string/menu_Reports"
         tools:layout="@layout/fragment_reports" />
 
+    <fragment
+        android:id="@+id/About"
+        android:name="com.example.nummus.aboutfragment"
+        android:label="About"
+        tools:layout="@layout/activity_about" />
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.nummus.settingsfragment"
+        android:label="Settings"
+        tools:layout="@layout/activity_settings" />
+
+
 </navigation>

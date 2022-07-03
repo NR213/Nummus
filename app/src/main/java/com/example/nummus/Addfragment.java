@@ -76,7 +76,7 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
         income = add.findViewById(R.id.income);
         expense = add.findViewById(R.id.expense);
-
+        Cat = "NULL";
         income.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,7 +191,7 @@ public class Addfragment extends Fragment implements AdapterView.OnItemSelectedL
 
                 String noteTXT = note.getText().toString();
 
-                if (amountTXT.equals("") ||  time.equals("") || dotTXT.equals("") || noteTXT.equals("")) {
+                if (amountTXT.equals("")  || dotTXT.equals("") || Cat.equals("NULL") ) {
                     Toast.makeText(getContext(), "Please add all the details", Toast.LENGTH_SHORT).show();
                 } else {
 

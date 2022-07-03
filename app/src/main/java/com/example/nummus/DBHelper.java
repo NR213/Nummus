@@ -18,15 +18,15 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
-        super(context, "Userdata16.db", null, 1);
+        super(context, "Userdata23.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table Userdetails(number INTEGER primary key AUTOINCREMENT , doT TEXT , time TEXT, amount TEXT, currency TEXT,converteuro TEXT, paymentMethod TEXT, note TEXT,cat TEXT)");
         DB.execSQL("create Table users(username TEXT, password TEXT)");
-        DB.execSQL("create Table Cost(numbercost TEXT,otp TEXT, category TEXT, source TEXT, reason TEXT)");
-        DB.execSQL("create Table Earnings(numberearnings TEXT,otp TEXT, category TEXT, source TEXT, reason TEXT)");
+        DB.execSQL("create Table Cost(numbercost INTEGER,otp TEXT, category TEXT, source TEXT, reason TEXT)");
+        DB.execSQL("create Table Earnings(numberearnings INTEGER,otp TEXT, category TEXT, source TEXT, reason TEXT)");
         //DB.execSQL("create Table UserGoals(GoalId INTEGER primary key, GoalName TEXT, thevalue TEXT)");
     }
 
@@ -152,7 +152,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("numbercost", numbercost);
         contentValues.put("otp", otp);
-        //contentValues.put("fixedpayment", fixedpayment);
+        //contentValues.put("fixedpayment", fixed);
         contentValues.put("category", category);
         contentValues.put("source", source);
         contentValues.put("reason", reason);
@@ -170,7 +170,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("numberearnings", numberearnings);
         contentValues.put("otp", otp);
-        //contentValues.put("fixedpayment", fixedpayment);
+        //contentValues.put("fixedpayment", fixed);
         contentValues.put("category", category);
         contentValues.put("source", source);
         contentValues.put("reason", reason);
@@ -183,30 +183,26 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getViewdata(String date, String category, String amountmin, String amountmax, String payment) {
+    public Cursor getViewdata(String date, String filterlistTxt, String catincome, String catexpense, String payment) {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = null;
-        if(amountmin.isEmpty() && amountmax.isEmpty() && category.equals("none") && date.isEmpty() && payment.equals("none")) {
-             cursor = DB.rawQuery("Select * from Userdetails ORDER BY rowid DESC", null);
 
-        }else if (category.equals("none") && amountmin.isEmpty() && amountmax.isEmpty() && payment.equals("none")) {
 
-             cursor = DB.rawQuery("Select * from Userdetails where doT = ? ORDER BY rowid DESC ", new String[]{date});
+        if(date.isEmpty()){
+            if(filterlistTxt.equals("income")) {
+                cursor = DB.rawQuery("Select *  from Userdetails u JOIN Earnings e on u.number = e.numberearnings  where u.cat = ? and u.paymentMethod = ? and e.category = ? ", new String[]{filterlistTxt, payment, catincome});
 
-        }
-        else if (amountmin.isEmpty() && amountmax.isEmpty() && !date.isEmpty() && !category.equals("none") && payment.equals("none"))
-         {
-            cursor = DB.rawQuery("Select * from Userdetails where doT = ? and cat = ? ORDER BY rowid DESC ", new String[]{date, category});
+            }else{
+                cursor = DB.rawQuery("Select *  from Userdetails u JOIN Cost e on u.number = e.numbercost  where u.cat = ? and u.paymentMethod = ? and e.category = ? ", new String[]{filterlistTxt, payment, catexpense});
 
-        }
-        else if (amountmin.isEmpty() && amountmax.isEmpty() && !date.isEmpty() && !category.equals("none") && !payment.equals("none"))
-        {
-            cursor = DB.rawQuery("Select * from Userdetails where doT = ? and cat = ? and paymentMethod = ? ORDER BY rowid DESC ", new String[]{date, category, payment});
+            }
+        }else{
+            if(filterlistTxt.equals("income")) {
+                cursor = DB.rawQuery("Select *  from Userdetails u JOIN Earnings e on u.number = e.numberearnings  where u.doT = ? and u.cat = ? and u.paymentMethod = ? and e.category = ? ", new String[]{date, filterlistTxt, payment, catincome});
 
-        }
-        else if(!date.isEmpty() && !amountmin.isEmpty() && !amountmax.isEmpty() && !category.equals("none") && !payment.equals("none"))
-        {
-            cursor = DB.rawQuery("Select * from Userdetails where doT = ? and cat = ? and paymentMethod = ? and amount >= ? and amount <= ? ORDER BY rowid DESC ", new String[]{date, category, payment, amountmin, amountmax});
+            }else{
+                cursor = DB.rawQuery("Select *  from Userdetails u JOIN Cost e on u.number = e.numbercost  where u.doT = ? and u.cat = ? and u.paymentMethod = ? and e.category = ? ", new String[]{date, filterlistTxt, payment, catexpense});
+            }
 
         }
 

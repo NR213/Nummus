@@ -7,11 +7,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class startactivity extends AppCompatActivity {
     Button getstarted;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,4 +35,5 @@ public class startactivity extends AppCompatActivity {
             }
         });
     }
+
 }

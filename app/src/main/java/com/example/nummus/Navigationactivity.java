@@ -1,10 +1,12 @@
 package com.example.nummus;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -30,7 +32,7 @@ public class Navigationactivity extends AppCompatActivity {
     SQLiteDatabase database;
     TextView textViewUsername;
     TextView textViewEmail;
-
+    Button toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +53,7 @@ public class Navigationactivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_View, R.id.nav_slideshow, R.id.nav_hello, R.id.updatemenu)
+                R.id.nav_home, R.id.nav_View, R.id.nav_slideshow, R.id.nav_hello, R.id.updatemenu, R.id.About, R.id.settings)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigationactivity);
@@ -63,12 +65,8 @@ public class Navigationactivity extends AppCompatActivity {
         textViewEmail= (TextView) mHeaderView.findViewById(R.id.textView);
 
 
-
-
-
-
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,6 +74,7 @@ public class Navigationactivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.navigationactivity, menu);
         return true;
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {

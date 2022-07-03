@@ -47,7 +47,7 @@ public class registrationactivity extends AppCompatActivity {
                         if (pass.length() > 5){
                         Boolean checkuser = DB.checkusername(user);
                         if(checkuser==false){
-                            if(Patterns.EMAIL_ADDRESS.matcher(user).matches()) {
+                            if(user.contains("@")) {
                                 Boolean insert = DB.insertData(user, pass);
 
                             if(insert==true){

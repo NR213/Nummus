@@ -145,12 +145,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="32dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Password length should be greater than 5"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
         android:layout_marginTop="450dp"
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="32dp"
         android:drawablePadding="5dp"
         android:fontFamily="sans-serif-black"
-        android:text="Password length should be 6 or more*"
+        android:text="Email id should contain '@'"
         android:textColor="@color/black"
         android:textSize="15dp" />
 

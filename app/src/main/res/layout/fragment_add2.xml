@@ -103,7 +103,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
@@ -111,6 +111,7 @@
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/black"
         app:endIconTint="@color/black"
+
         app:helperTextTextColor="@color/black"
         app:hintTextColor="@color/black"
 
@@ -122,9 +123,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
-            android:drawableStart="@drawable/ic_baseline_monetization_on_24"
-            android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
-            android:drawablePadding="5dp"
+
+            android:paddingLeft="25dp"
             android:drawableTint="@color/black"
             android:inputType="number"
             android:textColorHint="@color/black"
@@ -192,7 +192,7 @@
         android:layout_marginStart="32dp"
 
         android:layout_marginTop="150dp"
-        android:layout_marginEnd="260dp"
+        android:layout_marginEnd="240dp"
 
         android:background="@drawable/custom_button"
         android:hint="paymentMethod"

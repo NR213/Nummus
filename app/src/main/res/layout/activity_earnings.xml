@@ -22,27 +22,44 @@
         android:drawablePadding="5dp"
         android:drawableTint="@color/black"
         android:fontFamily="@font/ageopersonalusebold"
-        android:text="Add Earnings"
+        android:text="ADD INCOME"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24dp" />
 
-
-    <Spinner
-        android:id="@+id/typeEarning"
+    <TextView
+        android:id="@+id/catchoose"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/custom_button"
-        android:hint="paymentMethod"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
 
-        android:inputType="textPersonName"
-        android:spinnerMode="dropdown"
-        android:textAlignment="textStart"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Please choose a category"
 
-        android:textSize="96sp" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+
+<!--    <Spinner-->
+<!--        android:id="@+id/typeEarning"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:background="@drawable/custom_button"-->
+<!--        android:hint="paymentMethod"-->
+
+<!--        android:inputType="textPersonName"-->
+<!--        android:spinnerMode="dropdown"-->
+<!--        android:textAlignment="textStart"-->
+
+<!--        android:textSize="96sp" />-->
 
 
     <Spinner
@@ -50,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
         android:hint="paymentMethod"
@@ -59,27 +76,44 @@
 
         android:textSize="96sp" />
 
-    <Spinner
-        android:id="@+id/fixedpopupEarning"
+    <TextView
+        android:id="@+id/onetimepayment"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
 
-        android:background="@drawable/custom_button"
-        android:hint="paymentMethod"
-        android:inputType="textPersonName"
-        android:spinnerMode="dropdown"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="One Time Payment"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
 
-        android:textSize="96sp" />
+<!--    <Spinner-->
+<!--        android:id="@+id/fixedpopupEarning"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="160dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+
+<!--        android:background="@drawable/custom_button"-->
+<!--        android:hint="paymentMethod"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:spinnerMode="dropdown"-->
+
+<!--        android:textSize="96sp" />-->
 
     <Spinner
         android:id="@+id/categoryEarning"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
         android:hint="paymentMethod"
@@ -87,6 +121,23 @@
         android:spinnerMode="dropdown"
 
         android:textSize="96sp" />
+
+    <TextView
+        android:id="@+id/souchoose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Please choose a source"
+
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinputReasonEarning"

@@ -36,10 +36,11 @@ import java.util.Calendar;
 public class GalleryFragment extends Fragment implements AdapterView.OnItemSelectedListener, RecyclerInterface {
     DatePickerDialog.OnDateSetListener mDateSetListenerview;
     EditText mDisplayDateview;
-    String filterlistTxt, doTTxt, mintxt, maxtxt, paymentlist;
+    String filterlistTxt, doTTxt, categoryincome, categoryexpense, paymentlist;
     TextView data1, data2;
     RecyclerView recyclerView;
-    ArrayList<String> Date, Time, Amount, PaymentMethod, Note, Category, Currency, key;
+    Spinner categoryspincome, categorysp;
+    ArrayList<String> Date, Time, Amount, PaymentMethod, Note, Category, Currency, key, Category1;
     MyAdapter adapter1;
     private FragmentSlideshowBinding binding;
 
@@ -68,6 +69,20 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         adapterpm.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         paymentlist.setAdapter(adapterpm);
         paymentlist.setOnItemSelectedListener(this);
+
+        categoryspincome = nav_vw.findViewById(R.id.incomecat);
+        ArrayAdapter<CharSequence> adapters = ArrayAdapter.createFromResource(getContext(), R.array.CategoryEarnings, android.R.layout.simple_spinner_item);
+        adapters.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categoryspincome.setAdapter(adapters);
+        categoryspincome.setOnItemSelectedListener(this);
+        categoryspincome.setEnabled(true);
+
+        categorysp = nav_vw.findViewById(R.id.expensecat);
+        ArrayAdapter<CharSequence> adapterc = ArrayAdapter.createFromResource(getContext(), R.array.category, android.R.layout.simple_spinner_item);
+        adapters.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorysp.setAdapter(adapterc);
+        categorysp.setOnItemSelectedListener(this);
+        categorysp.setEnabled(false);
         Date = new ArrayList<>();
         Time = new ArrayList<>();
         Amount = new ArrayList<>();
@@ -76,8 +91,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
         Category = new ArrayList<>();
         Currency = new ArrayList<>();
         key = new ArrayList<>();
-        min = nav_vw.findViewById(R.id.text_amountmin);
-        max = nav_vw.findViewById(R.id.text_amountmax);
+
         recyclerView = nav_vw.findViewById(R.id.recyclerview);
         adapter1 = new MyAdapter(getContext(),key, Date, Time, Amount,PaymentMethod,Note,Category, Currency, this);
         recyclerView.setAdapter(adapter1);
@@ -115,36 +129,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
             }
         };
 
-//        view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String doTTxt = mDisplayDateview.getText().toString();
-//                Cursor res = DB.getdata(doTTxt);
-//                if(res.getCount()==0){
-//                    Toast.makeText(getContext(), "No Transaction Exists", Toast.LENGTH_SHORT).show();
 //
-//                    return;
-//                }
-//                StringBuffer buffer = new StringBuffer();
-//                while(res.moveToNext()){
-//                    buffer.append("Date: " + res.getString(0) +"\n");
-//                    buffer.append("Time: "+res.getString(1) +"\n");
-//                    buffer.append("Amount: "+res.getString(2) +"\n");
-//                    buffer.append("Reference: "+res.getString(3) +"\n");
-//                    buffer.append("PaymentMethod: "+res.getString(4) +"\n");
-//                    buffer.append("Note: "+res.getString(5)+"\n");
-//                    buffer.append("Category: "+res.getString(6)+"\n");
-//
-//                }
-//
-//
-//
-//                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//                builder.setCancelable(true);
-//                builder.setTitle("User Entries");
-//                builder.setMessage(buffer.toString());
-//                builder.show();
-//            }        });
 
         view.setOnClickListener(new View.OnClickListener() {
 
@@ -152,8 +137,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
             @Override
             public void onClick(View view) {
                doTTxt = mDisplayDateview.getText().toString();
-                mintxt = min.getText().toString();
-                maxtxt = max.getText().toString();
+
                 Date.clear();
                         Time.clear();
                         Amount.clear();
@@ -162,6 +146,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                         Category.clear();
                         Currency.clear();
                         key.clear();
+
 
                 displaydata();
                 adapter1.notifyDataSetChanged();
@@ -180,9 +165,25 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         if(adapterView.getId() == R.id.filter){
             filterlistTxt = adapterView.getItemAtPosition(i).toString();
+            if(filterlistTxt.equals("expense")){
+                categorysp.setEnabled(true);
+                categoryspincome.setEnabled(false);
+            }else{
+
+                categorysp.setEnabled(false);
+                categoryspincome.setEnabled(true);
+            }
         }
         if(adapterView.getId() == R.id.paymentMethoddrop){
             paymentlist = adapterView.getItemAtPosition(i).toString();
+        }
+        if(adapterView.getId() == R.id.incomecat){
+            categoryincome = adapterView.getItemAtPosition(i).toString();
+        }
+
+        if(adapterView.getId() == R.id.expensecat){
+            categoryexpense = adapterView.getItemAtPosition(i).toString();
+
         }
 
     }
@@ -204,7 +205,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
     private void displaydata()
     {
         DBHelper DB = new DBHelper(getContext());
-        Cursor cursor = DB.getViewdata(doTTxt, filterlistTxt, mintxt, maxtxt, paymentlist);
+        Cursor cursor = DB.getViewdata(doTTxt, filterlistTxt, categoryincome, categoryexpense, paymentlist);
         if(cursor.getCount()==0)
         {
             Toast.makeText(getContext(), "No Entry Exists", Toast.LENGTH_SHORT).show();
@@ -222,6 +223,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemSelec
                 PaymentMethod.add(cursor.getString(6));
               Note.add(cursor.getString(7));
               Category.add(cursor.getString(8));
+
             }
         }
     }

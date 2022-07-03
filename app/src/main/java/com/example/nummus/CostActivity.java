@@ -36,11 +36,11 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#E19F9F"));
         actionBar.setBackgroundDrawable(colorDrawable);
-        Type = findViewById(R.id.type);
-        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.Type, android.R.layout.simple_spinner_item);
-        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Type.setAdapter(adapterType);
-        Type.setOnItemSelectedListener(this);
+//        Type = findViewById(R.id.type);
+//        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.Type, android.R.layout.simple_spinner_item);
+//        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        Type.setAdapter(adapterType);
+//        Type.setOnItemSelectedListener(this);
 
         Category = findViewById(R.id.category);
         ArrayAdapter<CharSequence> adapterCategory = ArrayAdapter.createFromResource(this, R.array.category, android.R.layout.simple_spinner_item);
@@ -48,12 +48,12 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
         Category.setAdapter(adapterCategory);
         Category.setOnItemSelectedListener(this);
 
-        fixedinstallment = findViewById(R.id.fixedpopup);
-        ArrayAdapter<CharSequence> adapterfixedinstallment = ArrayAdapter.createFromResource(this, R.array.fixedinstallment, android.R.layout.simple_spinner_item);
-        adapterfixedinstallment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        fixedinstallment.setAdapter(adapterfixedinstallment);
-        fixedinstallment.setOnItemSelectedListener(this);
-        fixedinstallment.setEnabled(false);
+//        fixedinstallment = findViewById(R.id.fixedpopup);
+//        ArrayAdapter<CharSequence> adapterfixedinstallment = ArrayAdapter.createFromResource(this, R.array.fixedinstallment, android.R.layout.simple_spinner_item);
+//        adapterfixedinstallment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        fixedinstallment.setAdapter(adapterfixedinstallment);
+//        fixedinstallment.setOnItemSelectedListener(this);
+//        fixedinstallment.setEnabled(false);
 
         Source = findViewById(R.id.source);
         ArrayAdapter<CharSequence> adapterSource = ArrayAdapter.createFromResource(this, R.array.consumer, android.R.layout.simple_spinner_item);
@@ -82,8 +82,9 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
                     datainsert();
                 }
                 //int key = Integer.parseInt(primarykeyvalue);
-                Log.d(primarykeyvalue, "primarykeyvalue");
-                Boolean checkinsertdata = DB.insertCostdata(primarykeyvalue,type, category, source, ReasonTxt);
+
+                type = "one time payment";
+                Boolean checkinsertdata = DB.insertCostdata(primarykeyvalue, type, category, source, ReasonTxt);
                 if (checkinsertdata == true && checkinsertpagedata == true)
                     Toast.makeText(CostActivity.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
                 else
@@ -117,22 +118,23 @@ public class CostActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if(adapterView.getId() == R.id.type){
-            type = adapterView.getItemAtPosition(i).toString();
-            if(type.equals("Fixed installment")){
-                fixedinstallment.setEnabled(true);
-            }else{
-
-                fixedinstallment.setEnabled(false);
-            }
-        }
+//        if(adapterView.getId() == R.id.type){
+//            type = adapterView.getItemAtPosition(i).toString();
+//            if(type.equals("Fixed installment")){
+//                fixedinstallment.setEnabled(true);
+//            }else{
+//
+//                fixedinstallment.setEnabled(false);
+//            }
+//        }
         if(adapterView.getId() == R.id.category){
             category = adapterView.getItemAtPosition(i).toString();
         }
-        if(adapterView.getId() == R.id.fixedpopup){
-            fixed = adapterView.getItemAtPosition(i).toString();
 
-        }
+//        if(adapterView.getId() == R.id.fixedpopup){
+//            fixed = adapterView.getItemAtPosition(i).toString();
+//
+//        }
         if(adapterView.getId() == R.id.source){
             source = adapterView.getItemAtPosition(i).toString();
         }

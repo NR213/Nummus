@@ -40,45 +40,25 @@
 
         android:textSize="24dp" />
 
-
-<!--    <TextView-->
-<!--        android:id="@+id/texttitle3"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="165dp"-->
-<!--        android:layout_marginTop="136dp"-->
-<!--        android:layout_marginEnd="24dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:backgroundTint="#E19F9F"-->
-
-<!--        android:drawablePadding="5dp"-->
-<!--        android:drawableTint="@color/black"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Amount"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/black"-->
-
-<!--        android:textSize="12dp" />-->
-
     <TextView
-        android:id="@+id/texttitle2"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/box"
-
-
-        android:drawablePadding="5dp"
-        android:drawableTint="@color/black"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="258dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="816dp"
         android:fontFamily="@font/ageopersonalusebold"
-        android:text=""
+        android:text="Category"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/black" />
 
-        android:textSize="24dp" />
+
+
 
     <Spinner
         android:id="@+id/filter"
@@ -88,10 +68,10 @@
         android:layout_marginTop="75dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_button"
-        android:paddingLeft="10dp"
         android:fontFamily="@font/ageopersonalusebold"
         android:hint="paymentMethod"
         android:inputType="textPersonName"
+        android:paddingLeft="10dp"
         android:spinnerMode="dropdown"
 
         android:textSize="96sp" />
@@ -101,125 +81,54 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="260dp"
         android:background="@drawable/custom_button"
-android:paddingLeft="10dp"
         android:fontFamily="@font/ageopersonalusebold"
         android:hint="paymentMethod"
         android:inputType="textPersonName"
+        android:paddingLeft="10dp"
         android:spinnerMode="dropdown"
 
         android:textSize="96sp" />
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/textinputdata1"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:layout_marginStart="120dp"-->
-<!--        android:layout_marginTop="70dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="32dp"-->
-
-<!--        android:textColorHint="@color/black"-->
-<!--        app:boxStrokeColor="@color/black"-->
-<!--        app:endIconTint="@color/black"-->
-<!--        app:helperTextTextColor="@color/black"-->
-<!--        app:hintTextColor="@color/black"-->
-
-
-<!--        app:startIconTint="@color/black">-->
-
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/text_data1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="45dp"-->
-<!--            android:background="@drawable/custom_button"-->
-<!--            android:drawablePadding="5dp"-->
-<!--            android:drawableTint="@color/black"-->
-<!--            android:enabled="false"-->
-<!--            android:inputType="none"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textColorHint="@color/black"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"-->
-
-<!--            />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputamount1"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="158dp"
-        android:layout_height="75dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="150dp"
-
-        android:layout_marginBottom="32dp"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/black"
-        app:endIconTint="@color/black"
-        app:helperTextTextColor="@color/black"
-
-
-        app:hintTextColor="@color/black"
-        app:startIconTint="@color/black">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_amountmin"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/custom_button"
-
-            android:drawablePadding="5dp"
-            android:drawableTint="@color/black"
-            android:inputType="number"
-            android:hint="min"
-            android:textColorHint="@color/black"
-
-            />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinputamount2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <Spinner
+        android:id="@+id/incomecat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="285dp"
-        android:layout_marginTop="140dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="140dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:spinnerMode="dropdown"
+
+        android:textSize="96sp" />
+
+    <Spinner
+        android:id="@+id/expensecat"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:hint="paymentMethod"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:spinnerMode="dropdown"
 
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/black"
-        app:endIconTint="@color/black"
-        app:helperTextTextColor="@color/black"
-        app:hintTextColor="@color/black"
+        android:textSize="96sp" />
 
 
-        app:startIconTint="@color/black">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_amountmax"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/custom_button"
 
-            android:drawablePadding="5dp"
-            android:drawableTint="@color/black"
-            android:inputType="number"
-            android:hint="max"
-            android:textColorHint="@color/black"
 
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+
 
 
     <Button
@@ -241,73 +150,6 @@ android:paddingLeft="10dp"
         app:layout_constraintVertical_bias="0.111"
         tools:layout_editor_absoluteX="0dp" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textdate"-->
-<!--        android:layout_width="93dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="29dp"-->
-<!--        android:layout_marginTop="84dp"-->
-<!--        android:layout_marginEnd="289dp"-->
-<!--        android:layout_marginBottom="769dp"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Date : "-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="24dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textdropdown"-->
-<!--        android:layout_width="139dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="27dp"-->
-<!--        android:layout_marginTop="147dp"-->
-<!--        android:layout_marginEnd="245dp"-->
-<!--        android:layout_marginBottom="695dp"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Categories :"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="24dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textamount"-->
-<!--        android:layout_width="106dp"-->
-<!--        android:layout_height="31dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="29dp"-->
-<!--        android:layout_marginTop="218dp"-->
-<!--        android:layout_marginEnd="276dp"-->
-<!--        android:layout_marginBottom="642dp"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Amount :"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="24dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView4"-->
-<!--        android:layout_width="75dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="214dp"-->
-<!--        android:layout_marginTop="211dp"-->
-<!--        android:layout_marginEnd="122dp"-->
-<!--        android:layout_marginBottom="645dp"-->
-<!--        android:text="-"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="32dp" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinputview"
@@ -344,77 +186,62 @@ android:paddingLeft="10dp"
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <TextView-->
-<!--        android:id="@+id/texttitle2"-->
-<!--        android:layout_width="93dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="82dp"-->
-<!--        android:layout_marginEnd="24dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:backgroundTint="#E19F9F"-->
-<!--        android:drawablePadding="5dp"-->
-<!--        android:drawableTint="@color/black"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Date :"-->
 
-<!--        android:textColor="@color/black"-->
-
-<!--        android:textSize="24dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/texttitle3"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="47dp"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="150dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:backgroundTint="#E19F9F"-->
-<!--        android:drawablePadding="5dp"-->
-<!--        android:drawableTint="@color/black"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Categories :"-->
-
-<!--        android:textColor="@color/black"-->
-
-<!--        android:textSize="24dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/texttitle4"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="47dp"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="217dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:backgroundTint="#E19F9F"-->
-<!--        android:drawablePadding="5dp"-->
-<!--        android:drawableTint="@color/black"-->
-<!--        android:fontFamily="@font/ageopersonalusebold"-->
-<!--        android:text="Amount :"-->
-
-<!--        android:textColor="@color/black"-->
-
-<!--        android:textSize="24dp" />-->
 
     <TextView
-        android:id="@+id/texttitle5"
-        android:layout_width="150dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#E19F9F"
-        android:drawablePadding="5dp"
-        android:drawableTint="@color/black"
+        android:id="@+id/incomecat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="730dp"
         android:fontFamily="@font/ageopersonalusebold"
-        android:text="-"
+        android:text="Income Category"
         android:textAlignment="center"
+        android:textColor="@color/black" />
 
-        android:textColor="@color/black"
+    <TextView
+        android:id="@+id/paymentmethod1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="129dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="732dp"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Payment method"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
-        android:textSize="24dp" />
+    <TextView
+        android:id="@+id/expensecat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="279dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="730dp"
+        android:fontFamily="@font/ageopersonalusebold"
+        android:text="Expense Category"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
-</RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>

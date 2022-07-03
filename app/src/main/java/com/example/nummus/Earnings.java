@@ -38,11 +38,11 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#E19F9F"));
         actionBar.setBackgroundDrawable(colorDrawable);
-        Type = findViewById(R.id.typeEarning);
-        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.Earningtype, android.R.layout.simple_spinner_item);
-        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Type.setAdapter(adapterType);
-        Type.setOnItemSelectedListener(this);
+//        Type = findViewById(R.id.typeEarning);
+//        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.Earningtype, android.R.layout.simple_spinner_item);
+//        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        Type.setAdapter(adapterType);
+//        Type.setOnItemSelectedListener(this);
 
         Category = findViewById(R.id.categoryEarning);
         ArrayAdapter<CharSequence> adapterCategory = ArrayAdapter.createFromResource(this, R.array.CategoryEarnings, android.R.layout.simple_spinner_item);
@@ -50,12 +50,12 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
         Category.setAdapter(adapterCategory);
         Category.setOnItemSelectedListener(this);
 
-        fixedinstallment = findViewById(R.id.fixedpopupEarning);
-        ArrayAdapter<CharSequence> adapterfixedinstallment = ArrayAdapter.createFromResource(this, R.array.fixedinstallment, android.R.layout.simple_spinner_item);
-        adapterfixedinstallment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        fixedinstallment.setAdapter(adapterfixedinstallment);
-        fixedinstallment.setOnItemSelectedListener(this);
-        fixedinstallment.setEnabled(false);
+//        fixedinstallment = findViewById(R.id.fixedpopupEarning);
+//        ArrayAdapter<CharSequence> adapterfixedinstallment = ArrayAdapter.createFromResource(this, R.array.fixedinstallment, android.R.layout.simple_spinner_item);
+//        adapterfixedinstallment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        fixedinstallment.setAdapter(adapterfixedinstallment);
+//        fixedinstallment.setOnItemSelectedListener(this);
+//        fixedinstallment.setEnabled(false);
 
 
         Source = findViewById(R.id.sourceEarning);
@@ -85,6 +85,7 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
                     datainsert();
                 }
                 //int key = Integer.parseInt(primarykeyvalue);
+                type = "one time payment";
                 Boolean checkinsertdata = DB.insertEarningsdata(primarykeyvalue,type, category, source, ReasonTxt);
                 if (checkinsertdata == true && checkinsertpagedata == true) {
                     Toast.makeText(Earnings.this, "New Transaction Added", Toast.LENGTH_SHORT).show();
@@ -104,20 +105,20 @@ public class Earnings extends AppCompatActivity implements AdapterView.OnItemSel
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if(adapterView.getId() == R.id.typeEarning){
-            type = adapterView.getItemAtPosition(i).toString();
-            if(type.equals("Fixed Earning")){
-                fixedinstallment.setEnabled(true);
-            }else{
-
-                fixedinstallment.setEnabled(false);
-            }
-
-        }
-        if(adapterView.getId() == R.id.fixedpopupEarning){
-            fixed = adapterView.getItemAtPosition(i).toString();
-
-        }
+//        if(adapterView.getId() == R.id.typeEarning){
+//            type = adapterView.getItemAtPosition(i).toString();
+//            if(type.equals("Fixed Earning")){
+//                fixedinstallment.setEnabled(true);
+//            }else{
+//
+//                fixedinstallment.setEnabled(false);
+//            }
+//
+//        }
+//        if(adapterView.getId() == R.id.fixedpopupEarning){
+//            fixed = adapterView.getItemAtPosition(i).toString();
+//
+//        }
         if(adapterView.getId() == R.id.categoryEarning){
             category = adapterView.getItemAtPosition(i).toString();
         }

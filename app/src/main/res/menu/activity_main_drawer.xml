@@ -11,11 +11,11 @@
 
         <item
             android:id="@+id/nav_hello"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_baseline_library_add_check_24"
             android:title="Add" />
         <item
             android:id="@+id/nav_View"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_baseline_delete_24"
             android:title= "@string/menu_View" />
 <!--        <item-->
 <!--            android:id="@+id/nav_slideshow"-->
@@ -27,7 +27,15 @@
             android:title="update" />
         <item
             android:id="@+id/reportsmenu"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_bug_report_24"
             android:title="@string/menu_Reports" />
+        <item
+            android:id="@+id/About"
+            android:icon="@drawable/ic_baseline_logo_dev_24"
+            android:title="About" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Settings" />
     </group>
 </menu>
