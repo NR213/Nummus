@@ -44,6 +44,12 @@
         tools:layout="@layout/fragment_reports" />
 
     <fragment
+        android:id="@+id/help"
+        android:name="com.example.nummus.help"
+        android:label="help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
         android:id="@+id/About"
         android:name="com.example.nummus.aboutfragment"
         android:label="About"

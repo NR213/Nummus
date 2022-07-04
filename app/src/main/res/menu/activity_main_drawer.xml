@@ -30,6 +30,10 @@
             android:icon="@drawable/ic_baseline_bug_report_24"
             android:title="@string/menu_Reports" />
         <item
+            android:id="@+id/help"
+            android:icon="@drawable/ic_baseline_logo_dev_24"
+            android:title="help" />
+        <item
             android:id="@+id/About"
             android:icon="@drawable/ic_baseline_logo_dev_24"
             android:title="About" />

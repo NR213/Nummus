@@ -53,7 +53,7 @@ public class Navigationactivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_View, R.id.nav_slideshow, R.id.nav_hello, R.id.updatemenu, R.id.About, R.id.settings)
+                R.id.nav_home, R.id.nav_View, R.id.nav_slideshow, R.id.nav_hello, R.id.updatemenu, R.id.About, R.id.settings, R.id.help)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigationactivity);
